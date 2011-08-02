@@ -27,7 +27,6 @@ final class PlayerGraphics extends Animable {
 		if(!aBoolean1567)
 		{
 			model_1.method469();
-			model_1.method478(132, 132, 132);
 			model_1.method470(j);
 			model_1.anIntArrayArray1658 = null;
 			model_1.anIntArrayArray1657 = null;
@@ -50,7 +49,7 @@ final class PlayerGraphics extends Animable {
 				model_1.method473();
 			}
 		}
-		model_1.method479(84, 1000, -90, -580, -90, true);
+		model_1.method479(64 + aSpotAnim_1568.anInt413, 850 + aSpotAnim_1568.anInt414, -30, -50, -30, true);
 		return model_1;
 	}
 

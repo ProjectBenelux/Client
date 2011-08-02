@@ -45,18 +45,19 @@ public String s9;
 	
 
 public void models() {
-		for(int ModelIndex = 0; ModelIndex < 50000; ModelIndex++) {
+		for(int ModelIndex = 0; ModelIndex < 70000; ModelIndex++) {
 			byte[] abyte0 = getModel(ModelIndex);
+
 			if(abyte0 != null && abyte0.length > 0) {
+			
 			decompressors[1].method234(abyte0.length, abyte0, ModelIndex);
-			pushMessage("Model added successfully!", 0, "");
+			System.out.println("Dumped "+ModelIndex+"");
 			}
 		}
 	}
-	/*public byte[] getModel(int Index) {
+	public byte[] getModel(int Index) {
 		try {
-			//File Model = new File("C:/7/"+Index+".gz");
-			File Model = new File(signlink.findcachedir() + "/Data/Raw/525/" + Index + ".mdl");
+			File Model = new File("C:/7/"+Index+".gz");
 			byte[] aByte = new byte[(int)Model.length()];
 			FileInputStream fis = new FileInputStream(Model);
 			fis.read(aByte);
@@ -67,55 +68,6 @@ public void models() {
 		}
 		catch(Exception e)
 		{return null;}
-	}*/
-	public byte[] getModel(int Index) {
-		try {
-			File Model = new File(signlink.findcachedir() + "/Data/Raw/525/" + Index + ".gz");
-			byte[] aByte = new byte[(int)Model.length()];
-			FileInputStream fis = new FileInputStream(Model);
-			fis.read(aByte);
-			pushMessage("aByte = ["+aByte+"]!", 0, "");
-			fis.close();
-			return aByte;
-		}
-		catch(Exception e)
-		{return null;}
-	}
-	public int getXPForLevel(int level) {
-		int points = 0;
-		int output = 0;
-		for (int lvl = 1; lvl <= level; lvl++) {
-			points += Math.floor(lvl + 300.0 * Math.pow(2.0, lvl / 7.0));
-			if (lvl >= level) {
-				return output;
-			}
-			output = (int)Math.floor(points / 4);
-		}
-		return 0;
-	}
-	public String[] skillNames = { "Attack", "Hitpoints", "Mining", "Strength", "Agility",
-			"Smithing", "Defence", "Herblore", "Fishing", "Range", "Thieving",
-			"Cooking", "Prayer", "Crafting", "Firemaking", "Magic", "Fletching", "Woodcutting",
-			"Rune", "Slayer", "Farming", "Construction", "Hunter", "Summoning",
-			"Dungeoneering" };
-	public String setMessage(int level){
-		String[] messages = new String[4];
-		String message = "";
-		int maxLevel = 99;
-		if(maxStats[level] > maxLevel){
-			if(level != 24){
-				maxStats[level] = 99;
-			}else if(maxStats[level] > 120){
-				maxStats[level] = 120;
-			}
-		}
-	    int[] stuff = {0,3,14,2,16,13,1,15,10,4,17,7,5,12,11,6,9,8,20,18,19,21,22,23,24};
-		messages[0] = skillNames[level]+": "+currentStats[stuff[level]]+"/"+maxStats[stuff[level]]+"\\n";
-		messages[1] = "Current XP: " + getXPForLevel(maxStats[stuff[level]])+"\\n";
-		messages[2]= "Next level: "+ (getXPForLevel(maxStats[stuff[level]]+1)-getXPForLevel(maxStats[stuff[level]]))+"\\n";
-		messages[3]= "Remainder: "+ getXPForLevel(maxStats[stuff[level]]+1);
-		message = messages[0] + messages[1] + messages[2] + messages[3];
-		return message;
 	}
 	private void drawLoadingMessages(int used, String s, String s1) {
 		int width = aTextDrawingArea_1271.getTextWidth((used == 1 ? s : s1));
@@ -800,14 +752,13 @@ setHighMem();
 
 	}
 	
-	public void preloadModels() {
-		File file = new File(signlink.findcachedir() + "Data/Raw/525/");
+	public void preloadModels() { 
+		File file = new File(loadMDL());
 		File[] fileArray = file.listFiles();
-		for (int y = 0; y < fileArray.length; y++) {
+		for(int y = 0; y < fileArray.length; y++) {
 			String s = fileArray[y].getName();
-			byte[] buffer = ReadFile(signlink.findcachedir() + "Data/Raw/525/" + s);
-			Model.method460(buffer, Integer
-					.parseInt(getFileNameWithoutExtension(s)));
+			byte[] buffer = ReadFile(loadMDL()+""+s);
+			Model.method460(buffer,Integer.parseInt(getFileNameWithoutExtension(s)));
 		}
 	}
 	
@@ -5737,8 +5688,6 @@ case 38023:
 						}
 						if(inputString.equals("clientdrop"))
 							dropClient();
-						if(inputString.equals("::Dumpmodels"))
-							models();
 						if(inputString.equals("::lag"))
 							printDebug();
 						if(inputString.equals("::fpson"))
@@ -6153,11 +6102,6 @@ else if(myPrivilege == 4)
 				class9.atActionType = 0;
 				return;
 			}
-			if(type >= 205 && type <= 205+25){
-			type -= 205;
-			class9.disabledMessage = setMessage(type);
-			return;
-		}
 			int k = friendsCount;
 			if(anInt900 != 2)
 				k = 0;
@@ -6474,7 +6418,7 @@ else if(myPrivilege == 4)
 		}
 	}
 	
-	/*public int getXPForLevel(int level) {//gets the experience amount for the specified level
+	public int getXPForLevel(int level) {//gets the experience amount for the specified level
         int points = 0;
         int output = 0;
         for (int lvl = 1; lvl <= level; lvl++) {
@@ -6485,7 +6429,7 @@ else if(myPrivilege == 4)
             output = (int) Math.floor(points / 4);
         }
         return 0;
-    }*/
+    }
 	
 	private void drawSplitPrivateChat() {
 		if(splitPrivateChat == 0)

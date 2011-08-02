@@ -26,7 +26,8 @@ public final class Player extends Entity {
 				model_3.anIntArrayArray1657 = null;
 				if(spotAnim.anInt410 != 128 || spotAnim.anInt411 != 128)
 					model_3.method478(spotAnim.anInt410, spotAnim.anInt410, spotAnim.anInt411);
-				model_3.method479(84 + spotAnim.anInt413, 1550 + spotAnim.anInt414, -50, -110, -50, true);
+				model_3.method479(95 + spotAnim.anInt413, 9282 + spotAnim.anInt414, -30, -50, -30, true);
+				//model_3.method479(84 + spotAnim.anInt413, 1550 + spotAnim.anInt414, -50, -110, -50, true); //Or this one.. your choice .. this is HD Gfx's btw,, =D
 				Model aclass30_sub2_sub4_sub6_1s[] = {
 						model, model_3
 				};

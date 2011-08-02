@@ -18,7 +18,6 @@ public final class Animation {
             if(anims[j] == null)
                 anims[j] = new Animation();
             anims[j].readValues(ByteBuffer);
-			
         }
     }
 
@@ -107,7 +106,6 @@ public final class Animation {
 			anInt364 = 0;
 		}
 	}
-
     private Animation()
     {
         anInt356 = -1;

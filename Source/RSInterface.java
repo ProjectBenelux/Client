@@ -4,12 +4,6 @@
 
 public class RSInterface {
 
-    public Sprite sprite1;
-	    public String message;
-		 public int textColor;
-		     public boolean centerText;
-			     public TextDrawingArea textDrawingAreas;
-
 	/**Interfaces fixed:
 	*	Prayer
 	*	Curse
@@ -232,8 +226,7 @@ public class RSInterface {
 			configureBank(rsFonts);
 			configureCharDesign(rsFonts);
 			skillInterface(rsFonts);
-//			fonts = textDrawingAreas;
-		addNewSkills(rsFonts);
+			addNewSkills(rsFonts);
 			addOldSkills(rsFonts);
 			equipmentScreen(rsFonts);
 			musicTab(rsFonts);
@@ -378,184 +371,6 @@ newteleport(rsFonts);
 		DrawingArea.drawPixels(1, yPos + 69, xPos, 0x2E2B23, 175);
 		DrawingArea.method335(0x000000, yPos, 174, 68, 220, xPos);
 	}
-/*
-	* +602's Skill interface.
-	*/
-	
-	//public static TextDrawingArea[] fonts;
-
-
-/*
-	* +602's Skill interface.
-	*/
-	
-	//public static TextDrawingArea[] fonts;
-
-/*public static void skillTab602(RSFont[] TDA) {
-		RSInterface skill = addTabInterface(3917);
-		addText(27203, "99", 0xFFFF00, false, true, -1, TDA, 0);
-		addText(27204, "99", 0xFFFF00, false, true, -1, TDA, 0);
-		addText(27205, "99", 0xFFFF00, false, true, -1, TDA, 0);
-		addText(27206, "99", 0xFFFF00, false, true, -1, TDA, 0);
-		skill.totalChildren(4);
-		skill.child(0, 27203, 158, 175);
-		skill.child(1, 27204, 171, 186);
-		skill.child(2, 27205, 158, 203);
-		skill.child(3, 27206, 171, 214);
-		String[] spriteNames = { "Attack", "HP", "Mine", "Strength", "Agility", "Smith", "Defence", "Herblore", "Fish", "Range", "Thief", "Cook", "Prayer", "Craft", "Fire", "Mage", "Fletch", "Wood", "Rune", "Slay", "Farm", "Construction", "Hunter", "Summon", "Dungeon" };
-		int[] buttons = { 8654, 8655, 8656, 8657, 8658, 8659, 8660, 8861, 8662, 8663, 8664, 8665, 8666, 8667, 8668, 8669, 8670, 8671, 8672, 12162, 13928, 27123, 27124, 27125, 27126 };
-		int[] hovers = { 4040, 4076, 4112, 4046, 4082, 4118, 4052, 4088, 4124, 4058, 4094, 4130, 4064, 4100, 4136, 4070, 4106, 4142, 4160, 2832, 13917, 19005, 19006, 19007, 19008 };
-		int[][] text = { { 4004, 4005 }, { 4016, 4017 }, { 4028, 4029 },
-				{ 4006, 4007 }, { 4018, 4019 }, { 4030, 4031 }, { 4008, 4009 },
-				{ 4020, 4021 }, { 4032, 4033 }, { 4010, 4011 }, { 4022, 4023 },
-				{ 4034, 4035 }, { 4012, 4013 }, { 4024, 4025 }, { 4036, 4037 },
-				{ 4014, 4015 }, { 4026, 4027 }, { 4038, 4039 }, { 4152, 4153 },
-				{ 12166, 12167 }, { 13926, 13927 }, { 18165, 18169 },
-				{ 18166, 18170 }, { 18167, 18171 }, { 18168, 18172 } };
-
-		int[] icons = { 3965, 3966, 3967, 3968, 3969, 3970, 3971, 3972, 3973,
-				3974, 3975, 3976, 3977, 3978, 3979, 3980, 3981, 3982, 4151,
-				12165, 13925, 27127, 27128, 27129, 27130 };
-
-		int[][] buttonCoords = { { 4, 4 }, { 66, 4 }, { 128, 4 }, { 4, 32 },
-				{ 66, 32 }, { 128, 32 }, { 4, 60 }, { 66, 60 }, { 128, 60 },
-				{ 4, 88 }, { 66, 88 }, { 128, 88 }, { 4, 116 }, { 66, 116 },
-				{ 128, 116 }, { 4, 144 }, { 66, 144 }, { 128, 144 },
-				{ 4, 172 }, { 66, 172 }, { 128, 172 }, { 4, 200 }, { 66, 200 },
-				{ 128, 200 }, { 4, 229 } };
-		int[][] iconCoords = { { 6, 6 }, { 69, 7 }, { 131, 6 }, { 9, 34 },
-				{ 68, 33 }, { 131, 36 }, { 9, 64 }, { 67, 63 }, { 131, 61 },
-				{ 7, 91 }, { 68, 94 }, { 133, 90 }, { 6, 118 }, { 70, 120 },
-				{ 130, 118 }, { 6, 147 }, { 69, 146 }, { 132, 146 },
-				{ 6, 173 }, { 69, 173 }, { 130, 174 }, { 6, 202 }, { 69, 201 },
-				{ 131, 202 }, { 6, 230 } };
-		int[][] textCoords = { { 31, 7, 44, 18 }, { 93, 7, 106, 18 },
-				{ 155, 7, 168, 18 }, { 31, 35, 44, 46 }, { 93, 35, 106, 46 },
-				{ 155, 35, 168, 46 }, { 31, 63, 44, 74 }, { 93, 63, 106, 74 },
-				{ 155, 63, 168, 74 }, { 31, 91, 44, 102 },
-				{ 93, 91, 106, 102 }, { 155, 91, 168, 102 },
-				{ 31, 119, 44, 130 }, { 93, 119, 106, 130 },
-				{ 155, 119, 168, 130 }, { 31, 149, 44, 158 },
-				{ 93, 147, 106, 158 }, { 155, 147, 168, 158 },
-				{ 31, 175, 44, 186 }, { 93, 175, 106, 186 },
-				{ 155, 175, 168, 186 }, { 31, 203, 44, 214 },
-				{ 93, 203, 106, 214 }, { 155, 203, 168, 214 },
-				{ 31, 231, 44, 242 } };
-		int[][] newText = { { 18165, 18166, 18167, 18168 },
-				{ 18169, 18170, 18171, 18172 } };
-				//27123, 27124, 27125, 27126
-		for (int i = 0; i < hovers.length; i++) {
-			createSkillHover(hovers[i], 205 + i);
-			addSkillButton(buttons[i]);
-			addImage(icons[i], spriteNames[i]);
-		}
-		for (int i = 0; i < 4; i++) {
-			addSkillText(newText[0][i], false, i + 21);
-			addSkillText(newText[1][i], true, i + 21);
-		}
-		skill.children(icons.length + (text.length * 2) + hovers.length + buttons.length + 1);
-		int frame = 0;
-		RSInterface totalLevel = interfaceCache[3984];
-		totalLevel.disabledMessage = "@yel@Total level: %1";
-		totalLevel.rsFonts = fonts[2];
-		skill.child(frame, 3984, 74, 237); frame++;
-		for (int i = 0; i < buttons.length; i++) {
-			skill.child(frame, buttons[i], buttonCoords[i][0], buttonCoords[i][1]); frame++;
-		}
-		for (int i = 0; i < icons.length; i++) {
-			skill.child(frame, icons[i], iconCoords[i][0], iconCoords[i][1]); frame++;
-		}
-		for (int i = 0; i < text.length; i++) {
-			skill.child(frame, text[i][0], textCoords[i][0], textCoords[i][1]); frame++;
-		}
-		for (int i = 0; i < text.length; i++) {
-			skill.child(frame, text[i][1], textCoords[i][2], textCoords[i][3]); frame++;
-		}
-		for (int i = 0; i < hovers.length; i++) {
-			skill.child(frame, hovers[i], buttonCoords[i][0], buttonCoords[i][1]); frame++;
-		}
-	}
-
-	public void children(int total) {
-		children = new int[total];
-		childX = new int[total];
-		childY = new int[total];
-	}
-
-
-	public static void createSkillHover(int id, int x) {
-		RSInterface hover = addInterface(id);
-		hover.type = 9;
-		hover.message = "TESTING!";
-		hover.contentType = x;
-		hover.width = 60;
-		hover.height = 28;
-		hover.inventoryHover = true;
-	}
-	public static void addImage(int id, String s) {
-		RSInterface image = addInterface(id);
-		image.type = 5;
-		image.atActionType = 0;
-		image.contentType = 0;
-		image.width = 100;
-		image.height = 100;
-		image.sprite1 = getSprite(s);
-	}
-	
-	public static void addSkillText(int id, boolean max, int skill) {
-		RSInterface text = addInterface(id);
-		text.id = id;
-		text.parentID = id;
-		text.type = 4;
-		text.atActionType = 0;
-		text.width = 15;
-		text.height = 12;
-		text.rsFonts = fonts[0];
-		text.textShadowed = true;
-		text.centerText = true;
-		text.textColor = 16776960;
-		if (!max) {
-			text.valueIndexArray = new int[1][];
-			text.valueIndexArray[0] = new int[3];
-			text.valueIndexArray[0][0] = 1;
-			text.valueIndexArray[0][1] = skill;
-			text.valueIndexArray[0][2] = 0;
-		} else {
-			text.valueIndexArray = new int[2][];
-			text.valueIndexArray[0] = new int[3];
-			text.valueIndexArray[0][0] = 1;
-			text.valueIndexArray[0][1] = skill;
-			text.valueIndexArray[0][2] = 0;
-			text.valueIndexArray[1] = new int[1];
-			text.valueIndexArray[1][0] = 0;
-		}
-		text.message = "%1";
-	}
-public static Sprite getSprite(String s) {
-		Sprite image;
-		try {
-			image = new Sprite(s);
-			if (image != null) {
-				return image;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-		return image;
-	}
-	public boolean inventoryHover;
-	public static void addSkillButton(int id) {
-		RSInterface button = addInterface(id);
-		button.type = 5;
-		button.atActionType = 5;
-		button.contentType = 0;
-		button.width = 60;
-		button.height = 27;
-		button.sprite1 = CustomSpriteLoader(33225, "");
-		button.sprite1 = getSprite("Button");
-		button.tooltip = "View";
-	}*/
 	public void child(int id, int interID, int x, int y) {
 		children[id] = interID;
 		childX[id] = x;
@@ -946,11 +761,6 @@ int i = 26612;
     setBounds(45234, 10, 6, j, Interface); ++j;
   }
 
-    public static void sprite1(int i, int j)
-    {
-        RSInterface rsinterface = interfaceCache[i];
-        rsinterface.sprite1 = CustomSpriteLoader(j, "");
-    }
   public static void traintele(RSFont[] rsFonts)
   {
     RSInterface Interface = addInterface(45600);
@@ -1816,7 +1626,6 @@ int i = 26612;
 		rsinterface.disabledHoverColor = 0;
 		rsinterface.enabledHoverColor = 0;	
 	}
-	
 	public static void addText(int id, String text, RSFont tda[], int idx, int color, boolean center) {
 		RSInterface rsinterface = addInterface(id);
 		rsinterface.id = id;
@@ -3537,11 +3346,7 @@ public static void addSprite(int i, int j, int k) {
             rsi.child(frame, 19300, 0, 0); frame++; //Retaliate+cb lvl
             rsi.child(frame, id2, 94, 4); frame++; //weapon
     }
-	    public static void textColor(int i, int j)
-    {
-        RSInterface rsinterface = interfaceCache[i];
-        rsinterface.textColor = j;
-    }
+	
 	public static void emoteTab() {
         RSInterface tab = addTabInterface(147);
         RSInterface scroll = addTabInterface(148);

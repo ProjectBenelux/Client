@@ -12,7 +12,7 @@ public final class SpotAnim {
     public static void unpackConfig(NamedArchive NamedArchive)
     {
        ByteBuffer ByteBuffer = new ByteBuffer(getData("C:/projectfatalityv6/data/animation/spotanim.dat"));
-        int length = ByteBuffer.readUnsignedWord()+2;
+        int length = ByteBuffer.readUnsignedWord();
         if(cache == null)
             cache = new SpotAnim[length];
         for(int j = 0; j < length; j++)
@@ -20,18 +20,7 @@ public final class SpotAnim {
             if(cache[j] == null)
                 cache[j] = new SpotAnim();
             cache[j].anInt404 = j;
-            if(j <= 2616)
-            		cache[j].readValues(ByteBuffer);
-			if (j == 1247) {
-			cache[j].anInt405 = 60776;//modelId
-			cache[j].anInt406 = 4001;//animId
-			cache[j].aAnimation_407 = Animation.anims[4001];//4001->animId
-		}
-		if (j == 1248) {
-			cache[j].anInt405 = 60776;//modelId
-			cache[j].anInt406 = 4002;//animId
-			cache[j].aAnimation_407 = Animation.anims[4002];//4002->animId
-		}
+            cache[j].readValues(ByteBuffer);
         }
 
     }
@@ -47,7 +36,7 @@ public final class SpotAnim {
 			if(j != 65535) {
 			for (int k = 0; k < j; k++)
 		    anIntArray409[k] = ByteBuffer.readUnsignedWord();
-			 for (int k = 0; k < j; k++)
+			for (int k = 0; k < j; k++)
 		    anIntArray408[k] = ByteBuffer.readUnsignedWord();
 		}
     }
