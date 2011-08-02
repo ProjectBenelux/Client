@@ -221,6 +221,7 @@ public class RSInterface {
 			}
 		}
 		aClass44 = archive;
+			newTrade(rsFonts);
 			FriendList(rsFonts);
 			IgnoreList(rsFonts);
 			configureBank(rsFonts);
@@ -284,6 +285,7 @@ newteleport(rsFonts);
 		rsi.width = 62;
 		rsi.inventoryhover = true;
 	}
+	
 	public static void addSkillText(int id, String text, RSFont tda[], boolean center, int idx, int color, boolean shadow) {
 		RSInterface rsinterface = addTabInterface(id);
 		rsinterface.id = id;
@@ -603,7 +605,77 @@ int i = 26612;
     localRSInterface4.width = 325;
     localRSInterface4.height = 210;
   }	
+	public static void newTrade(RSFont[] TDA) {
+		RSInterface Interface = addInterface(3323);
+		setChildren(19, Interface);
+		addSprite(3324, 6, "Interfaces/TradeTab/TRADE");
+		addHover(3442, 3, 0, 3325, 1, "Interfaces/Bank/BANK", 17, 17, "Close Window");
+		addHovered(3325, 2, "Interfaces/Bank/BANK", 17, 17, 3326);
+		addText(3417, "Trading With:", 0xFF981F, true, true, 52,TDA, 2);
+		addText(3418, "Trader's Offer", 0xFF981F, false, true, 52,TDA, 1);
+		addText(3419, "Your Offer", 0xFF981F, false, true, 52,TDA, 1);
+		addText(3421, "Accept", 0x00C000, true, true, 52,TDA, 1);
+		addText(3423, "Decline", 0xC00000, true, true, 52,TDA, 1);
 
+		addText(3431, "Waiting For Other Player", 0xFFFFFF, true, true, 52,TDA, 1);
+		addText(23504, "Wealth transfer: 2147,000,000 coins' worth to Zezimablud12", 0xB9B855, true, true, -1,TDA, 0);
+		addText(23505, "1 has\\n 28 free\\n inventory slots.", 0xFF981F, true, true, -1,TDA, 0);
+
+		addText(23506, "Wealth transfer: 2147,000,000 coins' worth to Zezimablud12", 0xB9B855, false, true, -1,TDA, 0);
+		addText(23507, "Wealth transfer: 2147,000,000 coins' worth to me", 0xB9B855, false, true, -1,TDA, 0);
+
+		addHover(3420, 1, 0, 3327, 5, "Interfaces/TradeTab/TRADE", 65, 32, "Accept");
+		addHovered(3327, 2, "Interfaces/TradeTab/TRADE", 65, 32, 3328);
+		addHover(3422, 3, 0, 3329, 5, "Interfaces//TradeTab/TRADE", 65, 32, "Decline");
+		addHovered(3329, 2, "Interfaces/TradeTab/TRADE", 65, 32, 3330);
+		setBounds(3324, 0, 16, 0, Interface);
+		setBounds(3442, 485, 24, 1, Interface);
+		setBounds(3325, 485, 24, 2, Interface);
+		setBounds(3417, 258, 25, 3, Interface);
+		setBounds(3418, 355, 51, 4, Interface);
+		setBounds(3419, 68, 51, 5, Interface);
+		setBounds(3420, 223, 120, 6, Interface);
+		setBounds(3327, 223, 120, 7, Interface);
+		setBounds(3422, 223, 160, 8, Interface);
+		setBounds(3329, 223, 160, 9, Interface);
+		setBounds(3421, 256, 127, 10, Interface);
+		setBounds(3423, 256, 167, 11, Interface);
+		setBounds(3431, 256, 272, 12, Interface);
+		setBounds(3415, 12, 64, 13, Interface);
+		setBounds(3416, 321, 67, 14, Interface);
+
+		setBounds(23505, 256, 67, 16, Interface);
+
+		setBounds(23504, 255, 310, 15, Interface);
+		setBounds(23506, 20, 310, 17, Interface);
+		setBounds(23507, 380, 310, 18, Interface);
+
+		Interface = addInterface(3443);
+		setChildren(15, Interface);
+		addSprite(3444, 3, "Interfaces/TradeTab/TRADE");
+		addButton(3546, 2, "Interfaces/ShopTab/SHOP", 63, 24, "Accept", 1);
+		addButton(3548, 2, "Interfaces/ShopTab/SHOP", 63, 24, "Decline", 3);
+		addText(3547, "Accept", 0x00C000, true, true, 52,TDA, 1);
+		addText(3549, "Decline", 0xC00000, true, true, 52,TDA, 1);
+		addText(3450, "Trading With:", 0x00FFFF, true, true, 52,TDA, 2);
+		addText(3451, "Yourself", 0x00FFFF, true, true, 52,TDA, 2);
+		setBounds(3444, 12, 20, 0, Interface);
+		setBounds(3442, 470, 32, 1, Interface);
+		setBounds(3325, 470, 32, 2, Interface);
+		setBounds(3535, 130, 28, 3, Interface);
+		setBounds(3536, 105, 47, 4, Interface);
+		setBounds(3546, 189, 295, 5, Interface);
+		setBounds(3548, 258, 295, 6, Interface);
+		setBounds(3547, 220, 299, 7, Interface);
+		setBounds(3549, 288, 299, 8, Interface);
+		setBounds(3557, 71, 87, 9, Interface);
+		setBounds(3558, 315, 87, 10, Interface);
+		setBounds(3533, 64, 70, 11, Interface);
+		setBounds(3534, 297, 70, 12, Interface);
+		setBounds(3450, 95, 289, 13, Interface);
+		setBounds(3451, 95, 304, 14, Interface);
+	}
+	
   public static void PbConfigsInterface(RSFont[] rsFonts) {
     RSInterface Interface = addTabInterface(38000);
 
