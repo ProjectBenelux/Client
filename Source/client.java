@@ -8167,18 +8167,15 @@ FrameReader.loadFrames();
 	private void method101(Entity entity)
 	{
 		entity.aBoolean1541 = false;
-		if(entity.anInt1517 != -1)
-		{
+		if (entity.anInt1517 != -1) {
 			Animation animation = Animation.anims[entity.anInt1517];
 			entity.anInt1519++;
-			if(entity.anInt1518 < animation.anInt352 && entity.anInt1519 > animation.method258(entity.anInt1518))
-			{
-				entity.anInt1519 = 0;
+			if (entity.anInt1518 < animation.anInt352 && entity.anInt1519 > animation.method258(entity.anInt1518)) {
+				entity.anInt1519 = 1;//this is the frame delay. 0 is what it's normally at. higher number = faster animations.
 				entity.anInt1518++;
 			}
-			if(entity.anInt1518 >= animation.anInt352)
-			{
-				entity.anInt1519 = 0;
+			if (entity.anInt1518 >= animation.anInt352) {
+				entity.anInt1519 = 1;
 				entity.anInt1518 = 0;
 			}
 		}
