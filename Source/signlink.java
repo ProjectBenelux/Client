@@ -109,7 +109,7 @@ public static String findcachedir()
         };
         if(storeid < 32 || storeid > 34)
             storeid = 32;
-        String s = "C:/projectfatalityv6";
+        String s = "C:/ProjectBeneluxCache";
         for(int i = 0; i < as.length; i++)
             try
             {

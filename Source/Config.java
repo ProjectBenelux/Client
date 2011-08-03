@@ -9,10 +9,10 @@ public class Config {
 	public static int Revision = 525; //Client's revision.
 
 	//public static String serverName = "Project Fatality"; //Server's IP adress. EX: pkscape.no-ip.biz
-public static String serverName = "0"; //Server's IP adress. EX: pkscape.no-ip.biz
-	public static String ClientName = "Project Fatality"; //Client's Name.
-	public static String ClientWebsite = "www.project-fatality.com"; //You're servers forums/website.
-	public static String FrameTitle = "Project Fatality"; //Title after you client name.
+	public static String serverName = "0"; //Server's IP adress. EX: pkscape.no-ip.biz
+	public static String ClientName = "Project Benelux"; //Client's Name.
+	public static String ClientWebsite = "http://www.google.com/"; //You're servers forums/website.
+	public static String FrameTitle = "Project Benelux"; //Title after you client name.
 	public static String cacheLink = 
 		"http://www.project-fatality.net/projectfatalityv6.zip"; //Website were your cache is stored.
 	public static boolean //Everything that can be toggled.
