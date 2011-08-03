@@ -3419,93 +3419,79 @@ public static void addSprite(int i, int j, int k) {
             rsi.child(frame, id2, 94, 4); frame++; //weapon
     }
 	
-	public static void emoteTab() {
+public static void emoteTab() {
         RSInterface tab = addTabInterface(147);
         RSInterface scroll = addTabInterface(148);
         tab.totalChildren(1);
-        tab.child(0, 148, 0, 3);
-		int w = 41, h = 47;
-		addButton(168, 0, "Interfaces/Emotes/EMOTE", "Yes", 1, w, h);
-		addButton(169, 1, "Interfaces/Emotes/EMOTE", "No", 1, w, h);
-		addButton(164, 2, "Interfaces/Emotes/EMOTE", "Bow", 1, w, h);
-		addButton(165, 3, "Interfaces/Emotes/EMOTE", "Angry", 1, w, h);
-		addButton(162, 4, "Interfaces/Emotes/EMOTE", "Think", 1, w, h);
-		addButton(163, 5, "Interfaces/Emotes/EMOTE", "Wave", 1, w, h);
-		addButton(13370, 6, "Interfaces/Emotes/EMOTE", "Shrug", 1, w, h);
-		addButton(171, 7, "Interfaces/Emotes/EMOTE", "Cheer", 1, w, h);
-		addButton(167, 8, "Interfaces/Emotes/EMOTE", "Beckon", 1, w, h);
-		addButton(170, 9, "Interfaces/Emotes/EMOTE", "Laugh", 1, w, h);
-		addButton(13366, 10, "Interfaces/Emotes/EMOTE", "Jump for Joy", 1, w, h);
-		addButton(13368, 11, "Interfaces/Emotes/EMOTE", "Yawn", 1, w, h);
-		addButton(166, 12, "Interfaces/Emotes/EMOTE", "Dance", 1, w, h);
-		addButton(13363, 13, "Interfaces/Emotes/EMOTE", "Jig", 1, w, h);
-		addButton(13364, 14, "Interfaces/Emotes/EMOTE", "Spin", 1, w, h);
-		addButton(13365, 15, "Interfaces/Emotes/EMOTE", "Headbang", 1, w, h);
-		addButton(161, 16, "Interfaces/Emotes/EMOTE", "Cry", 1, w, h);
-		addButton(11100, 17, "Interfaces/Emotes/EMOTE", "Blow kiss", 1, w, h);
-		addButton(13362, 18, "Interfaces/Emotes/EMOTE", "Panic", 1, w, h);
-		addButton(13367, 19, "Interfaces/Emotes/EMOTE", "Raspberry", 1, w, h);
-		addButton(172, 20, "Interfaces/Emotes/EMOTE", "Clap", 1, w, h);
-		addButton(13369, 21, "Interfaces/Emotes/EMOTE", "Salute", 1, w, h);
-		addButton(13383, 22, "Interfaces/Emotes/EMOTE", "Goblin Bow", 1, w, h);
-		addButton(13384, 23, "Interfaces/Emotes/EMOTE", "Goblin Salute", 1, w, h);
-		addButton(667, 24, "Interfaces/Emotes/EMOTE", "Glass Box", 1, w, h);
-		addButton(6503, 25, "Interfaces/Emotes/EMOTE", "Climb Rope", 1, w, h);
-		addButton(6506, 26, "Interfaces/Emotes/EMOTE", "Lean On Air", 1, w, h);
-		addButton(666, 27, "Interfaces/Emotes/EMOTE", "Glass Wall", 1, w, h);
-		addButton(18464, 33, "Interfaces/Emotes/EMOTE", "Idea", 1, w, h);
-		addButton(18465, 34, "Interfaces/Emotes/EMOTE", "Stomp", 1, w, h);
-		addButton(15166, 35, "Interfaces/Emotes/EMOTE", "Flap", 1, w, h);
-		addButton(18686, 36, "Interfaces/Emotes/EMOTE", "Slap head", 1, 43, h);
-		addButton(18689, 28, "Interfaces/Emotes/EMOTE", "Zombie Walk", 1, w, h);
-		addButton(18688, 29, "Interfaces/Emotes/EMOTE", "Zombie Dance", 1, w, h);
-		addButton(18691, 30, "Interfaces/Emotes/EMOTE", "Scared", 1, w, h);
-		addButton(18692, 37, "Interfaces/Emotes/EMOTE", "Zombie Hand", 1, w, h);
-		addButton(18687, 31, "Interfaces/Emotes/EMOTE", "Bunny Hop", 1, w, h);
-		addButton(154, 32, "Interfaces/Emotes/EMOTE", "SkillCape", 1, w, h);
-		scroll.totalChildren(38);
-		//ids
-		scroll.width = 173;
-		scroll.height = 258;
-		scroll.scrollMax = 500;
-		scroll.child(0, 168, 10, 6);
-		scroll.child(1, 169, 54, 6);
-		scroll.child(2, 164, 98, 13);
-		scroll.child(3, 165, 137, 6);//Row 1
-		scroll.child(4, 162, 9, 55);
-		scroll.child(5, 163, 48, 55);
-		scroll.child(6, 13370, 95, 55);
-		scroll.child(7, 171, 137, 55);//Row 2
-		scroll.child(8, 167, 7, 104);
-		scroll.child(9, 170, 51, 104);
-		scroll.child(10, 13366, 95, 103);
-		scroll.child(11, 13368, 139, 104);//Row 3
-		scroll.child(12, 166, 6, 153);
-		scroll.child(13, 13363, 50, 153);
-		scroll.child(14, 13364, 90, 153);
-		scroll.child(15, 13365, 135, 153);//Row 4
-		scroll.child(16, 161, 8, 203);
-		scroll.child(17, 11100, 51, 202);
-		scroll.child(18, 13362, 99, 203);
-		scroll.child(19, 13367, 137, 202);//Row 5
-		scroll.child(20, 172, 10, 250);
-		scroll.child(21, 13369, 53, 250);
-		scroll.child(22, 13383, 88, 255);
-		scroll.child(23, 13384, 138, 249);//Row 6
-		scroll.child(24, 667, 3, 300);
-		scroll.child(25, 6503, 52, 299);
-		scroll.child(26, 6506, 96, 299);
-		scroll.child(27, 666, 141, 299);//Row 7
-		scroll.child(28, 18464, 5, 349);
-		scroll.child(29, 18465, 53, 350);
-		scroll.child(30, 15166, 88, 352);
-		scroll.child(31, 18686, 142, 350);//Row 8
-		scroll.child(32, 18687, 12, 452);
-		scroll.child(33, 18689, 10, 401);
-		scroll.child(34, 18688, 51, 402);
-		scroll.child(35, 18692, 90, 402);//Row 9
-		scroll.child(36, 18691, 139, 406);
-		scroll.child(37, 154, 49, 450);//Row 10
+        tab.child(0, 148, 0, 1);
+        addButton(168, 0, "Interfaces/Emotes/EMOTE", "Yes",41,47);
+        addButton(169, 1, "Interfaces/Emotes/EMOTE", "No",41,47);
+        addButton(164, 2, "Interfaces/Emotes/EMOTE", "Bow",41,47);
+        addButton(165, 3, "Interfaces/Emotes/EMOTE", "Angry",41,47);
+        addButton(162, 4, "Interfaces/Emotes/EMOTE", "Think",41,47);
+        addButton(163, 5, "Interfaces/Emotes/EMOTE", "Wave",41,47);
+        addButton(13370, 6, "Interfaces/Emotes/EMOTE", "Shrug",41,47);
+        addButton(171, 7, "Interfaces/Emotes/EMOTE", "Cheer",41,47);
+        addButton(167, 8, "Interfaces/Emotes/EMOTE", "Beckon",41,47);
+        addButton(170, 9, "Interfaces/Emotes/EMOTE", "Laugh",41,47);
+        addButton(13366, 10, "Interfaces/Emotes/EMOTE", "Jump for Joy",41,47);
+        addButton(13368, 11, "Interfaces/Emotes/EMOTE", "Yawn",41,47);
+        addButton(166, 12, "Interfaces/Emotes/EMOTE", "Dance",41,47);
+        addButton(13363, 13, "Interfaces/Emotes/EMOTE", "Jig",41,47);
+        addButton(13364, 14, "Interfaces/Emotes/EMOTE", "Spin",41,47);
+        addButton(13365, 15, "Interfaces/Emotes/EMOTE", "Headbang",41,47);
+        addButton(161, 16, "Interfaces/Emotes/EMOTE", "Cry",41,47);
+        addButton(11100, 17, "Interfaces/Emotes/EMOTE", "Blow kiss",41,47);
+        addButton(13362, 18, "Interfaces/Emotes/EMOTE", "Panic",41,47);
+        addButton(13367, 19, "Interfaces/Emotes/EMOTE", "Raspberry",41,47);
+        addButton(172, 20, "Interfaces/Emotes/EMOTE", "Clap",41,47);
+        addButton(13369, 21, "Interfaces/Emotes/EMOTE", "Salute",41,47);
+        addButton(13383, 22, "Interfaces/Emotes/EMOTE", "Goblin Bow",41,47);
+        addButton(13384, 23, "Interfaces/Emotes/EMOTE", "Goblin Salute",41,47);
+        addButton(667, 24, "Interfaces/Emotes/EMOTE", "Glass Box",41,47);
+        addButton(6503, 25, "Interfaces/Emotes/EMOTE", "Climb Rope",41,47);
+        addButton(6506, 26, "Interfaces/Emotes/EMOTE", "Lean On Air",41,47);
+        addButton(666, 27, "Interfaces/Emotes/EMOTE", "Glass Wall",41,47);
+        addButton(18464, 28, "Interfaces/Emotes/EMOTE", "Zombie Walk",41,47);
+        addButton(18465, 29, "Interfaces/Emotes/EMOTE", "Zombie Dance",41,47);
+        addButton(15166, 30, "Interfaces/Emotes/EMOTE", "Scared",41,47);
+        addButton(18686, 31, "Interfaces/Emotes/EMOTE", "Rabbit Hop",41,47);
+	addButton(154, 32, "Interfaces/Emotes/EMOTE", "Skillcape Emote",41,47);
+        scroll.totalChildren(33);
+        scroll.child(0, 168, 10, 7);
+        scroll.child(1, 169, 54, 7);
+        scroll.child(2, 164, 98, 14);
+        scroll.child(3, 165, 137, 7);
+        scroll.child(4, 162, 9, 56);
+        scroll.child(5, 163, 48, 56);
+        scroll.child(6, 13370, 95, 56);
+        scroll.child(7, 171, 137, 56);
+        scroll.child(8, 167, 7, 105);
+        scroll.child(9, 170, 51, 105);
+        scroll.child(10, 13366, 95, 104);
+        scroll.child(11, 13368, 139, 105);
+        scroll.child(12, 166, 6, 154);
+        scroll.child(13, 13363, 50, 154);
+        scroll.child(14, 13364, 90, 154);
+        scroll.child(15, 13365, 135, 154);
+        scroll.child(16, 161, 8, 204);
+        scroll.child(17, 11100, 51, 203);
+        scroll.child(18, 13362, 99, 204);
+        scroll.child(19, 13367, 137, 203);
+        scroll.child(20, 172, 10, 253);
+        scroll.child(21, 13369, 53, 253);
+        scroll.child(22, 13383, 88, 258);
+        scroll.child(23, 13384, 138, 252);
+        scroll.child(24, 667, 2, 303);
+        scroll.child(25, 6503, 49, 302);
+        scroll.child(26, 6506, 93, 302);
+        scroll.child(27, 666, 137, 302);
+        scroll.child(28, 18464, 9, 352);
+        scroll.child(29, 18465, 50, 352);
+        scroll.child(30, 15166, 94, 356);
+        scroll.child(31, 18686, 141, 353);
+        scroll.child(32, 154, 5, 401);
+        scroll.width = 173; scroll.height = 258; scroll.scrollMax = 450;
     }
 
 	public static void optionTab(RSFont[] TDA) {

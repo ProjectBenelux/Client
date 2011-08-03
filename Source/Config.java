@@ -11,7 +11,7 @@ public class Config {
 	//public static String serverName = "Project Fatality"; //Server's IP adress. EX: pkscape.no-ip.biz
 	public static String serverName = "0"; //Server's IP adress. EX: pkscape.no-ip.biz
 	public static String ClientName = "Project Benelux"; //Client's Name.
-	public static String ClientWebsite = "http://www.google.com/"; //You're servers forums/website.
+	public static String ClientWebsite = "www.google.com"; //You're servers forums/website.
 	public static String FrameTitle = "Project Benelux"; //Title after you client name.
 	public static String cacheLink = 
 		"http://www.project-fatality.net/projectfatalityv6.zip"; //Website were your cache is stored.
