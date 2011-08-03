@@ -5627,24 +5627,32 @@ case 38023:
 						chatJoin(l3);
 					}
 				}
-			} else if(inputDialogState == 1) {
-				if(j >= 48 && j <= 57 && amountOrNameInput.length() < 10) {
-					amountOrNameInput += (char)j;
+			} else if (inputDialogState == 1) {
+				if (j >= 48 && j <= 57 && amountOrNameInput.length() < 10) {
+					amountOrNameInput += (char) j;
 					inputTaken = true;
 				}
-				if(j == 8 && amountOrNameInput.length() > 0) {
+				if ((!amountOrNameInput.toLowerCase().contains("k") && !amountOrNameInput.toLowerCase().contains("m") && !amountOrNameInput.toLowerCase().contains("b")) && (j == 107 || j == 109) || j == 98) {
+					amountOrNameInput += (char) j;
+					inputTaken = true;
+				}
+				if (j == 8 && amountOrNameInput.length() > 0) {
 					amountOrNameInput = amountOrNameInput.substring(0, amountOrNameInput.length() - 1);
 					inputTaken = true;
 				}
-				if(j == 13 || j == 10) {
-					if(amountOrNameInput.length() > 0) {
-						int i1 = 0;
-						try {
-							i1 = Integer.parseInt(amountOrNameInput);
+				if (j == 13 || j == 10) {
+					if (amountOrNameInput.length() > 0) {
+						if (amountOrNameInput.toLowerCase().contains("k")) {
+							amountOrNameInput = amountOrNameInput.replaceAll("k", "000");
+						} else if (amountOrNameInput.toLowerCase().contains("m")) {
+							amountOrNameInput = amountOrNameInput.replaceAll("m", "000000");
+						} else if (amountOrNameInput.toLowerCase().contains("b")) {
+							amountOrNameInput = amountOrNameInput.replaceAll("b", "000000000");
 						}
-						catch(Exception _ex) { }
+						int amount = 0;
+						amount = Integer.parseInt(amountOrNameInput);
 						stream.createFrame(208);
-						stream.writeDWord(i1);
+						stream.writeDWord(amount);
 					}
 					inputDialogState = 0;
 					inputTaken = true;
