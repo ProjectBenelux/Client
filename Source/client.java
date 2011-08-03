@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 import javax.swing.*;
 
 public class client extends RSApplet {
-public final static String CACHE_URL = "http://project-fatality.net/ProjectFatalityV5.zip";
+//public final static String CACHE_URL = "http://project-fatality.net/ProjectFatalityV5.zip";
 public String s10;
 public static int a = 0;
 public String s9;
@@ -627,7 +627,7 @@ setHighMem();
 	}
 
 	public Socket openSocket(int port) throws IOException {
-		return new Socket(InetAddress.getByName(Config.serverName), port);
+		return new Socket(InetAddress.getByName(server), port);
 	}
 
 	private void processMenuClick() { 
@@ -5676,7 +5676,7 @@ case 38023:
 					inputTaken = true;
 				}
 				if((j == 13 || j == 10) && inputString.length() > 0) {
-					if(myPrivilege >= 2 || Config.serverName.equals("127.0.0.1") || 1 == 1) {
+					if(myPrivilege >= 2 || server.equals("127.0.0.1") || 1 == 1) {
 						if(inputString.equals("::sky")){
 							Config.allowSky = !Config.allowSky;
 						}
@@ -7915,7 +7915,7 @@ FrameReader.loadFrames();
 
 	public URL getCodeBase() {
 		try {
-			return new URL(Config.serverName +":" + (80 + portOff));
+			return new URL(server +":" + (80 + portOff));
 		} catch(Exception _ex) {
 		}
 		return null;
@@ -12482,9 +12482,10 @@ else if(rights == 4)
 		cButtonHPos = -1;
 		cButtonHCPos = -1;
 		cButtonCPos = 0;
-		Config.serverName = Config.serverName;
+		//Config.serverName = Config.serverName;
 		anIntArray1052 = new int[152];//map
 		anIntArray1229 = new int[152];//map
+		server = "0.0.0.0";
 		anIntArrayArray825 = new int[104][104];
 		friendsNodeIDs = new int[200];
 		groundArray = new NodeList[4][104][104];
@@ -13077,6 +13078,7 @@ else if(rights == 4)
 	private static int anInt1288;
 	private int anInt1289;
 	public static int anInt1290;
+	public static String server = "0.0.0.0";
 	public int drawCount;
 	public int fullscreenInterfaceID;
 	public int anInt1044;//377
