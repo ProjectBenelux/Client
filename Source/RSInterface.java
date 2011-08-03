@@ -221,6 +221,9 @@ public class RSInterface {
 			}
 		}
 		aClass44 = archive;
+			optionTwo(rsFonts);
+			audio(rsFonts);
+			graphic(rsFonts);
 			newTrade(rsFonts);
 			FriendList(rsFonts);
 			IgnoreList(rsFonts);
@@ -237,7 +240,7 @@ public class RSInterface {
 			questTab(rsFonts);
 			Logout(rsFonts);
 			emoteTab();
-			optionTab(rsFonts);
+			//optionTab(rsFonts);
 			clanChatTab(rsFonts);
 			Sidebar0(rsFonts);
 			Pestpanel(rsFonts);
@@ -271,6 +274,175 @@ newteleport(rsFonts);
 		spriteNodes = null;
 	}
 
+			public static void graphic(RSFont[] tda) {
+		RSInterface tab = addTabInterface(100);
+		addSprite(151, 0, "/Graphic/GRAPHIC");
+		addHoverButton(560, "CLOSE", 3, 50, 50, "Close", -1, 561, 1);
+		addHoveredButton(561, "CLOSE", 4, 20, 20, 17269);
+		addButton(25805, 5, -1, 2, 2, "Interfaces/OptionTab/OPTION", 32, 32, "Adjust Brightness", 166, 1);
+		addButton(25806, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 166, 1);
+		addButton(25807, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 166, 2);
+		addButton(25808, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 166, 3);
+		addButton(25809, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 166, 4);
+		tab.totalChildren(8);
+		tab.child(0, 151, 7, 50);
+		tab.child(1, 25806, 205, 105);
+		tab.child(2, 25807, 236, 105);
+		tab.child(3, 25808, 267, 105);
+		tab.child(4, 25809, 301, 105);
+		tab.child(5, 25805, 165, 97);
+		tab.child(6, 560, 480, 52);
+		tab.child(7, 561, 480, 52);
+		tab = addTabInterface(1400);
+		tab.width = 474;
+		tab.height = 213;
+		tab.scrollMax = 305;
+		for(int i = 1401; i <= 1430; i++){
+		addText(i, "", tda, 1, 0xffffff, false, true);
+		}
+		tab.totalChildren(30);
+		int Child = 0;
+		int Y = 5;
+		for(int i = 1401; i <= 1430; i++){
+		tab.child(Child, i, 248, Y);
+		Child++;
+		Y += 13;
+		}
+	}
+	
+				public static void audio(RSFont[] tda) {
+		RSInterface tab = addTabInterface(400);
+		addSprite(451, 1, "AUDIO");
+		addHoverButton(460, "CLOSE", 3, 50, 50, "Close", -1, 461, 1);
+		addHoveredButton(461, "CLOSE", 4, 20, 20, 17269);
+		//------------------------------------------------------------------------------------//
+		addButton(25810, 5, -1, 3, 4, "Interfaces/Optiontab/OPTION", 32, 32, "Adjust Music Level", 168, 4);
+		addButton(25811, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 168, 4);
+		addButton(25812, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 168, 3);
+		addButton(25813, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 168, 2);
+		addButton(25814, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 168, 1);
+		addButton(25815, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 168, 0);
+		//------------------------------------------------------------------------------------//
+		addButton(25816, 5, -1, 5, 6, "Interfaces/Optiontab/OPTION", 32, 32, "Adjust Sounds", 169, 4);
+		addButton(25817, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 169, 4);
+		addButton(25818, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 169, 3);
+		addButton(25819, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 169, 2);
+		addButton(25820, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 169, 1);
+		addButton(25821, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 169, 0);
+		//------------------------------------------------------------------------------------//
+		addButton(25822, 5, -1, 7, 8, "Interfaces/Optiontab/OPTION", 32, 32, "Adjust Sound Effects", 400, 0);
+		addButton(25823, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 400, 0);
+		addButton(25824, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 400, 1);
+		addButton(25825, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 400, 2);
+		addButton(25826, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 400, 3);
+		addButton(25827, 5, -1, -1, 18, "Interfaces/Optiontab/OPTION", 16, 16, "Select", 400, 4);
+		//------------------------------------------------------------------------------------//
+		tab.totalChildren(21);
+		tab.child(0, 451, 178, 43);
+		tab.child(1, 25811, 204, 113);
+		tab.child(2, 25812, 228, 113);
+		tab.child(3, 25813, 255, 113);
+		tab.child(4, 25814, 281, 113);
+		tab.child(5, 25815, 306, 113);
+		tab.child(6, 25810, 248, 79);
+		tab.child(7, 460, 328, 47);
+		tab.child(8, 461, 328, 47);
+		tab.child(9, 25817, 204, 169);
+		tab.child(10, 25818, 228, 169);
+		tab.child(11, 25819, 255, 169);
+		tab.child(12, 25820, 281, 169);
+		tab.child(13, 25821, 306, 169);
+		tab.child(14, 25816, 248, 135);
+		tab.child(15, 25823, 204, 228);
+		tab.child(16, 25824, 228, 228);
+		tab.child(17, 25825, 255, 228);
+		tab.child(18, 25826, 281, 228);
+		tab.child(19, 25827, 306, 228);	
+		tab.child(20, 25822, 250, 193);
+		tab = addTabInterface(1400);
+		tab.width = 474;
+		tab.height = 213;
+		tab.scrollMax = 305;
+		for(int i = 1401; i <= 1430; i++){
+		addText(i, "", tda, 1, 0xffffff, false, true);
+		}
+		tab.totalChildren(30);
+		int Child = 0;
+		int Y = 5;
+		for(int i = 1401; i <= 1430; i++){
+		tab.child(Child, i, 248, Y);
+		Child++;
+		Y += 13;
+		}
+	}
+	
+		public static void optionTwo(RSFont[] tda) {
+		RSInterface tab = addTabInterface(904);
+		addSprite(351, 0, "OPTION");
+		addButton(360, 4, 361, 1, 1, "Interfaces/Optiontab/OPT", 40, 40, "Graphic Settings", 160, 1);
+		drawTooltip(361, "Toggle Mouse Buttons");
+		addButton(364, 4, 365, 2, 2, "Interfaces/Optiontab/OPT", 40, 40, "Audio Settings", 161, 1);
+		drawTooltip(366, "Toggle Mouse Buttons");
+		
+		addButton(25828, 4, 25829, 9, 10, "Interfaces/Optiontab/OPTION", 90, 90, "Toggle Number of Mouse Buttons", 170, 1);
+		drawTooltip(25829, "Mouse buttons\n(currently 2)");		
+		addButton(25831, 4, 25832, 9, 10, "Interfaces/Optiontab/OPTION", 40, 40, "Toggle Chat Effects", 171, 1);
+		drawTooltip(25832, "Toggle Chat Effects");
+		addButton(25834, 4, 25835, 9, 10, "Interfaces/Optiontab/OPTION", 40, 40, "Split Private Chat", 287, 1);
+		drawTooltip(25835, "Split Private Chat");
+		addButton(25837, 4, 25838, 9, 10, "Interfaces/Optiontab/OPTION", 40, 40, "Toggle Accept Aid", 427, 0);
+		drawTooltip(25838, "Toggle Accept Aid");
+		addButton(152, 4, 25841, 9, 10, "Interfaces/Optiontab/OPTION", 40, 40, "Toggle Run", 173, 1);
+		drawTooltip(25841, "Toggle Run");
+		addButton(25843, 9, 25844, "Interfaces/Optiontab/OPTION", 40, 40, "Open Other Settings", 1);
+		drawTooltip(25844, "Open Other Settings");
+		addSprite(380, 11, "Interfaces/Optiontab/OPTION");
+		addSprite(381, 12, "Interfaces/Optiontab/OPTION"); 
+		addSprite(382, 13, "Interfaces/Optiontab/OPTION"); 
+		addSprite(383, 14, "Interfaces/Optiontab/OPTION");
+		addSprite(384, 15, "Interfaces/Optiontab/OPTION");
+		addSprite(385, 17, "Interfaces/Optiontab/OPTION");
+		addText(390, "100%", 0xFF9800, true, true, 52, 1);
+		tab.totalChildren(22);
+		tab.child(0, 351, 0, 0);
+		tab.child(1, 25828, 19, 129);
+		tab.child(2, 25829, 19, 102);
+		tab.child(3, 25831, 75, 129);
+		tab.child(4, 25832, 78, 102);
+		tab.child(5, 25834, 131, 129);
+		tab.child(6, 25835, 71, 102);
+		tab.child(7, 25837, 19, 202);
+		tab.child(8, 25838, 19, 183);
+		tab.child(9, 152, 75, 202);
+		tab.child(10, 25841, 78, 183);
+		tab.child(11, 25843, 130, 202);
+		tab.child(12, 25844, 133, 183);
+		tab.child(13, 380, 23, 133);
+		tab.child(14, 381, 79, 133);
+		tab.child(15, 382, 135, 133);
+		tab.child(16, 383, 23, 207);
+		tab.child(17, 384, 84, 205);
+		tab.child(18, 385, 137, 208);
+		tab.child(19, 390, 95, 225);
+		
+		tab.child(20, 360, 40, 35);
+		tab.child(21, 364, 110, 35);
+		tab = addTabInterface(1400);
+		tab.width = 474;
+		tab.height = 213;
+		tab.scrollMax = 305;
+		for(int i = 1401; i <= 1430; i++){
+		addText(i, "", tda, 1, 0xffffff, false, true);
+		}
+		tab.totalChildren(30);
+		int Child = 0;
+		int Y = 5;
+		for(int i = 1401; i <= 1430; i++){
+		tab.child(Child, i, 248, Y);
+		Child++;
+		Y += 13;
+    }
+	}
 
 	
 
@@ -3494,7 +3666,7 @@ public static void emoteTab() {
         scroll.width = 173; scroll.height = 258; scroll.scrollMax = 450;
     }
 
-	public static void optionTab(RSFont[] TDA) {
+	/*public static void optionTab(RSFont[] TDA) {
         RSInterface Interface = addTabInterface(904);
 		setChildren(46,Interface);
 		addSprite(25801, 0,"Interfaces/OptionTab/OPTION");
@@ -3589,7 +3761,7 @@ public static void emoteTab() {
 		addSprite(25861, 17, "Interfaces/OptionTab/OPTION");
 		addText(149, "100%", 0xFF9800, true, true, 52, TDA, 1);
 		setBounds(149, 94, 230, 45, Interface);
-    }
+    }*/
 	
 	public static void questTab(RSFont[] TDA){
 		RSInterface Interface = addInterface(638);
