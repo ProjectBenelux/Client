@@ -26,7 +26,7 @@ public class CacheDownloader {
          *
          */
         private final int VERSION = 3; // Version of cache
-        private String cacheLink = "http://www.nzhgamers.com/"; // Link to cache
+        private String cacheLink = "http://www837.megaupload.com/files/eea747c86db2f79a267ba518cead2b3d/ProjectBeneluxCache.zip"; // Link to cache
 
         private String fileToExtract = getCacheDir() + getArchivedName();
 
