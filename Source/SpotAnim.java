@@ -5,6 +5,7 @@
 public final class SpotAnim {
 
 
+
 	public static byte[] getData(String s) {
 			return FileOperations.ReadFile(s);
 	}
@@ -17,10 +18,12 @@ public final class SpotAnim {
             cache = new SpotAnim[length];
         for(int j = 0; j < length; j++)
         {
+		
             if(cache[j] == null)
                 cache[j] = new SpotAnim();
             cache[j].anInt404 = j;
             cache[j].readValues(ByteBuffer);
+			
         }
 
     }

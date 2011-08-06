@@ -4,12 +4,14 @@
 // Decompiler options: packimports(3) 
 
 public final class Animation {
+
 	public static byte[] getData(String s) {
 			return FileOperations.ReadFile(s);
 	}
+	
     public static void unpackConfig(NamedArchive NamedArchive)
     {
-           ByteBuffer ByteBuffer = new ByteBuffer(getData("C:/projectfatalityv6/data/animation/seq.dat"));
+           ByteBuffer ByteBuffer = new ByteBuffer(getData("C:/ProjectBeneluxCache/data/animation/seq.dat"));
         int length = ByteBuffer.readUnsignedWord();
         if(anims == null)
             anims = new Animation[length];
@@ -18,6 +20,7 @@ public final class Animation {
             if(anims[j] == null)
                 anims[j] = new Animation();
             anims[j].readValues(ByteBuffer);
+
         }
     }
 

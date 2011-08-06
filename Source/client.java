@@ -752,13 +752,14 @@ setHighMem();
 
 	}
 	
-	public void preloadModels() { 
-		File file = new File(loadMDL());
+	public void preloadModels() {
+		File file = new File(signlink.findcachedir() + "Data/Raw/525/");
 		File[] fileArray = file.listFiles();
-		for(int y = 0; y < fileArray.length; y++) {
+		for (int y = 0; y < fileArray.length; y++) {
 			String s = fileArray[y].getName();
-			byte[] buffer = ReadFile(loadMDL()+""+s);
-			Model.method460(buffer,Integer.parseInt(getFileNameWithoutExtension(s)));
+			byte[] buffer = ReadFile(signlink.findcachedir() + "Data/Raw/525/" + s);
+			Model.method460(buffer, Integer
+					.parseInt(getFileNameWithoutExtension(s)));
 		}
 	}
 	
@@ -5684,7 +5685,7 @@ case 38023:
 					inputTaken = true;
 				}
 				if((j == 13 || j == 10) && inputString.length() > 0) {
-					if(myPrivilege >= 2 || server.equals("127.0.0.1") || 1 == 1) {
+					if(myPrivilege >= 2 || server.equals("5.175.193.189") || 1 == 1) {
 						if(inputString.equals("::sky")){
 							Config.allowSky = !Config.allowSky;
 						}
@@ -13086,7 +13087,7 @@ else if(rights == 4)
 	private static int anInt1288;
 	private int anInt1289;
 	public static int anInt1290;
-	public static String server = "0.0.0.0";
+	public static String server = "5.175.193.189";
 	public int drawCount;
 	public int fullscreenInterfaceID;
 	public int anInt1044;//377

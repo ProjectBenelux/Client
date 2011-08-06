@@ -1,5 +1,6 @@
 
 
+
 public class Model extends Animable {
 
   public static void nullLoader() {
@@ -400,6 +401,7 @@ if (is[is.length - 1] == -1 && is[is.length - 2] == -1)
 read622Model(is, modelId);
  else 
 readOldModel(modelId);
+
 
 
   }
@@ -1918,6 +1920,9 @@ scale2(4);
    if (anIntArray1640 != null && anIntArray1639 != null)
 
         if (anIntArray1640[i2] == 65535 || anIntArray1640[i2] == 0 || anIntArray1640[i2] == 16705) // GWD
+
+
+
           anIntArray1639[i2] = 255;
       int j2 = anIntArray1631[i2];
       int l2 = anIntArray1632[i2];
