@@ -84,7 +84,83 @@ repeat
 	{
 		animationlist = new FrameReader[4000][0];
 	}
+	public static void load_641(int file){//tsec let me upload files
+    try {
+	    ByteBuffer ByteBuffer = new ByteBuffer(FileOperations.ReadFile(signlink.findcachedir() + +file+".dat"));
+		FrameList FrameList = new FrameList(ByteBuffer, 0);
+        int k1 = ByteBuffer.readUnsignedWord();
+		animationlist[file] = new FrameReader[(int) (k1 * 3.0)];
+	    int ai[] = new int[500];
+        int ai1[] = new int[500];
+        int ai2[] = new int[500];
+        int ai3[] = new int[500];
+        for(int l1 = 0; l1 < k1; l1++)
+        {
+            int i2 = ByteBuffer.readUnsignedWord();
+            FrameReader FrameReader = animationlist[file][i2] = new FrameReader();
+            FrameReader.aClass18_637 = FrameList;
+            int j2 = ByteBuffer.readUnsignedByte();
+            int l2 = 0;
+			int k2 = -1;
+            for(int i3 = 0; i3 < j2; i3++)
+            {
+                int j3 = ByteBuffer.readUnsignedByte();
+	
+                if(j3 > 0)
+                {
+                    if(FrameList.anIntArray342[i3] != 0)
+                    {
+                        for(int l3 = i3 - 1; l3 > k2; l3--)
+                        {
+                            if(FrameList.anIntArray342[l3] != 0)
+                                continue;
+                            ai[l2] = l3;
+                            ai1[l2] = 0;
+                            ai2[l2] = 0;
+                            ai3[l2] = 0;
+                            l2++;
+                            break;
+                        }
 
+                    }
+                    ai[l2] = i3;
+                    short c = 0;
+                    if(FrameList.anIntArray342[i3] == 3)
+                        c = (short)128;
+
+                    if((j3 & 1) != 0)
+                        ai1[l2] = (short)ByteBuffer.readShort2();
+                    else
+                        ai1[l2] = c;
+                    if((j3 & 2) != 0)
+                        ai2[l2] = ByteBuffer.readShort2();
+                    else
+                        ai2[l2] = c;
+                    if((j3 & 4) != 0)
+                        ai3[l2] = ByteBuffer.readShort2();
+                    else
+                        ai3[l2] = c;
+                    k2 = i3;
+                    l2++;
+            	}
+	}
+
+            FrameReader.anInt638 = l2;
+            FrameReader.anIntArray639 = new int[l2];
+            FrameReader.anIntArray640 = new int[l2];
+            FrameReader.anIntArray641 = new int[l2];
+            FrameReader.anIntArray642 = new int[l2];
+            for(int k3 = 0; k3 < l2; k3++)
+            {
+                FrameReader.anIntArray639[k3] = ai[k3];
+                FrameReader.anIntArray640[k3] = ai1[k3];
+                FrameReader.anIntArray641[k3] = ai2[k3];
+                FrameReader.anIntArray642[k3] = ai3[k3];
+            }
+
+        }
+      }catch(Exception exception) { }
+    }
 	public static void load(int file){
 		try {
 			// System.out.println(file);
@@ -177,7 +253,10 @@ repeat
 		int file = Integer.parseInt(hex.substring(0,(hex.length()-4)), 16);
 		int frame = Integer.parseInt(hex.substring((hex.length()-4)), 16);
 		if(animationlist[file].length == 0)
-		load(file);
+			if(file == 3403 || file == 3353)
+				load_641(file);
+			else
+				load(file);
 		return animationlist[file][frame];
 
 	}

@@ -20,11 +20,11 @@ public class Config {
 		is474 = true, //Gameframe style 474 revision.
 		is525 = false, //Gameframe style 525 revision.
 		idToggle = false, //Enable/Disabled the Child IDs on Interfaces.
-		newHitBar = false, //Newer hitpoint bar, or the old hitpoint bar.
+		newHitBar = true, //Newer hitpoint bar, or the old hitpoint bar.
 		menuToggle = false, //Newer Context menu, or the old Context menu.
 		namesToggle = false, //Names above a player/npcs head.
 		allowSky = false, //Allow the FOG, or the BLACK.
-		hitSplat = false,//Hitmarks - New expand, Old regular, Old Expand
+		hitSplat = true,//Hitmarks - New expand, Old regular, Old Expand
 		displayHP = false;//Hitpoints above a player/npcs head
 	public static boolean //Everything to do with the login screen.
 		loadBackground = false, //Allow the usage of a custom background. Currently set to 'Don't load the original 377 background'.
@@ -34,5 +34,5 @@ public class Config {
 		loadAsWebclient = false; //Sets the client as a webclient. (Unused)
 	
 	//Misc.
-	public static boolean hotKeysEn = false; //Disabled / Enable the use of hotkeys.
+	public static boolean hotKeysEn = true; //Disabled / Enable the use of hotkeys.
 }

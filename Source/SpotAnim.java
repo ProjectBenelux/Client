@@ -23,6 +23,16 @@ public final class SpotAnim {
                 cache[j] = new SpotAnim();
             cache[j].anInt404 = j;
             cache[j].readValues(ByteBuffer);
+		if (j == 1247) {
+			cache[j].anInt405 = 60776;//modelId
+			cache[j].anInt406 = 4001;//animId
+			cache[j].aAnimation_407 = Animation.anims[4001];//4001->animId
+		}
+		if (j == 1248) {
+			cache[j].anInt405 = 60776;//modelId
+			cache[j].anInt406 = 4002;//animId
+			cache[j].aAnimation_407 = Animation.anims[4002];//4002->animId
+		}
 			
         }
 
