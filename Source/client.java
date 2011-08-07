@@ -3074,6 +3074,9 @@ setHighMem();
 		else
 			titleBox1 = new Sprite("Login/Random/TITLEBOX");
 		titleButton = new Background(titleStreamLoader, "titlebutton", 0);
+		loginHover = new Background(titleStreamLoader, "titlebutton", 1);
+		box = new Background(titleStreamLoader, "titleBox", 1);
+		boxHover = new Background(titleStreamLoader, "titleBox", 2);
 		aBackgroundArray1152s = new Background[12];
 		int j = 0;
 		try {
@@ -3263,53 +3266,45 @@ setHighMem();
 			return super.getAppletContext();
 	}
 
-	private void drawLogo() { 
+private void drawLogo() {
 		byte abyte0[] = titleStreamLoader.getDataForName("title.dat");
 		Sprite sprite = new Sprite(abyte0, this);
-		if(Config.loadLogo) {
+		
 			leftSideFlame.initDrawingArea();
-			sprite.method346(0, 0);
-			rightSideFlame.initDrawingArea();
-			sprite.method346(-637, 0);
-			aRSImageProducer_1107.initDrawingArea();
-			sprite.method346(-128, 0);
-			aRSImageProducer_1108.initDrawingArea();
-			sprite.method346(-202, -371);
-			loginScreenArea.initDrawingArea();
-			sprite.method346(-202, -171);
-			gameLogo.initDrawingArea();
-			sprite.method346(0, -265);
-			aRSImageProducer_1113.initDrawingArea();
-			sprite.method346(-562, -265);
-			aRSImageProducer_1114.initDrawingArea();
-			sprite.method346(-128, -171);
-			aRSImageProducer_1115.initDrawingArea();
-			sprite.method346(-562, -171);
-			int ai[] = new int[sprite.myWidth];
-			for(int j = 0; j < sprite.myHeight; j++) {
-				for(int k = 0; k < sprite.myWidth; k++)
-					ai[k] = sprite.myPixels[(sprite.myWidth - k - 1) + sprite.myWidth * j];
-				System.arraycopy(ai, 0, sprite.myPixels, sprite.myWidth * j, sprite.myWidth);
-			}
-			leftSideFlame.initDrawingArea();
+	        sprite.method346(0, 0);
+	        rightSideFlame.initDrawingArea();
+	        sprite.method346(-637, 0);
+	        aRSImageProducer_1107.initDrawingArea();
+	        sprite.method346(-128, 0);
+	        aRSImageProducer_1108.initDrawingArea();
+	        sprite.method346(-202, -371);
+	        loginScreenArea.initDrawingArea();
+	        sprite.method346(0, 0);
+	        gameLogo.initDrawingArea();
+	        sprite.method346(0, -265);
+	        aRSImageProducer_1113.initDrawingArea();
+	        sprite.method346(-562, -265);
+	        aRSImageProducer_1114.initDrawingArea();
+	        sprite.method346(-128, -171);
+	        aRSImageProducer_1115.initDrawingArea();
+	        sprite.method346(-562, -171);
 			
-			//sprite = new Sprite(titleStreamLoader, "logo", 0);
-			aRSImageProducer_1107.initDrawingArea();
-			//sprite.drawSprite(382 - sprite.myWidth / 2 - 128, 18);
-		} else {
-			int ai[] = new int[sprite.myWidth];
-			for(int j = 0; j < sprite.myHeight; j++) {
-				for(int k = 0; k < sprite.myWidth; k++)
-					ai[k] = sprite.myPixels[(sprite.myWidth - k - 1) + sprite.myWidth * j];
-				System.arraycopy(ai, 0, sprite.myPixels, sprite.myWidth * j, sprite.myWidth);
-			}
-			loginScreenArea.initDrawingArea();
-			sprite.method346(0, 0);
-		}
+	        int backgroundPixels[] = new int[sprite.myWidth];
+	        for (int j = 0; j < sprite.myHeight; j++) {
+	            for (int k = 0; k < sprite.myWidth; k++)
+	                backgroundPixels[k] = sprite.myPixels[(sprite.myWidth - k - 1) + sprite.myWidth * j];
+
+	            System.arraycopy(backgroundPixels, 0, sprite.myPixels, sprite.myWidth * j, sprite.myWidth);
+
+	        }			
 		sprite = null;
 		Object obj = null;
 		Object obj1 = null;
 		System.gc();
+	}
+	
+	private void resetImage() {
+	DrawingArea.setAllPixelsToZero();
 	}
 
     private void processOnDemandQueue()  {
@@ -3792,8 +3787,8 @@ a = 1;
 		aRSImageProducer_1108 = new RSImageProducer(360, 132, getGameComponent());
 		DrawingArea.setAllPixelsToZero();
 		if(normalLogin == true)  {
-			loginScreenArea = new RSImageProducer(360, 200, getGameComponent());
-			DrawingArea.setAllPixelsToZero();
+		loginScreenArea = new RSImageProducer(765, 503,
+				getGameComponent());
 		} else if(normalLogin == false)  {
 			loginScreenArea = new RSImageProducer(765, 503, getGameComponent());
 			DrawingArea.setAllPixelsToZero();
@@ -5479,6 +5474,7 @@ case 38023:
 		mapBackImage = null;
 		inGameScreen = null;
 		chatBackImage = null;
+		backgroundFuck = null;
 
 		aRSImageProducer_1124 = null;
 		aRSImageProducer_1125 = null;
@@ -7626,6 +7622,7 @@ FrameReader.loadFrames();
 					sideIcons[j3] = new Sprite(mediaArchive, "sideicons", j3);
 				compass = new Sprite(mediaArchive, "compass", 0);
 				mapArea = new Sprite("maparea");
+				backgroundFuck = new Sprite("background");
 				multiOverlay = new Sprite(mediaArchive, "overlay_multiway", 0);
 				mapBack = new Background(mediaArchive, "mapback", 0);
 				mapEdge = new Sprite(mediaArchive, "mapedge", 0);
@@ -10081,82 +10078,41 @@ else if (playerRights == 4)
 	
 	public Sprite CheckBox, CheckBoxHover, LoginButton, LoginButtonHover;
 public static int loginHovered, CheckHovered;
-    private void drawLoginScreen(boolean flag) {
-		if (normalLogin == true) {
-			resetImageProducers();
-			loginScreenArea.initDrawingArea();
-			titleBox.drawBackground(0, 0);
-			char c = '\u0168';
-			char c1 = '\310';
-			if(loginScreenState == 0) {
-				int i = c1 / 2 + 80;
-				smallText.method382(0x75a9a9, c / 2, onDemandFetcher.statusString, i, true);
-				i = c1 / 2 - 20;
-				chatTextDrawingArea.method382(0xffff00, c / 2, "Welcome to "+Config.ClientName, i, true);
-
-
-					
-				i += 30;
-				int l = c / 2 - 80;
-				int k1 = c1 / 2 + 20;
-				titleButton.drawBackground(l - 73, k1 - 20);
-				chatTextDrawingArea.method382(0xffffff, l, "New User", k1 + 5, true);
-				l = c / 2 + 80;
-				titleButton.drawBackground(l - 73, k1 - 20);
-				chatTextDrawingArea.method382(0xffffff, l, "Existing User", k1 + 5, true);
-			}
-			if(loginScreenState == 2) {
-				int j = c1 / 2 - 40;
-				if(loginMessage1.length() > 0) {
-					chatTextDrawingArea.method382(0xffff00, c / 2, loginMessage1, j - 15, true);
-					chatTextDrawingArea.method382(0xffff00, c / 2, loginMessage2, j, true);
-					j += 30;
-				} else {
-					chatTextDrawingArea.method382(0xffff00, c / 2, loginMessage2, j - 7, true);
-					j += 30;
-				}
-				chatTextDrawingArea.method389(true, c / 2 - 90, 0xffffff, "Username: " + capitalize(myUsername) + ((loginScreenCursorPos == 0) & (loopCycle % 40 < 20) ? "@yel@|" : ""), j);
-				j += 15;
-				chatTextDrawingArea.method389(true, c / 2 - 88, 0xffffff, "Password: " + TextClass.passwordAsterisks(myPassword) + ((loginScreenCursorPos == 1) & (loopCycle % 40 < 20) ? "@yel@|" : ""), j);
-				j += 15;
-				if(!flag) {
-					int i1 = c / 2 - 80;
-					int l1 = c1 / 2 + 50;
-					titleButton.drawBackground(i1 - 73, l1 - 20);
-					chatTextDrawingArea.method382(0xffffff, i1, "Login", l1 + 5, true);
-					i1 = c / 2 + 80;
-					titleButton.drawBackground(i1 - 73, l1 - 20);
-					chatTextDrawingArea.method382(0xffffff, i1, "Cancel", l1 + 5, true);
-				}
-			} 
-			if(loginScreenState == 3) {
-				chatTextDrawingArea.method382(0xffff00, c / 2, "Create a free account", c1 / 2 - 60, true);
-				int k = c1 / 2 - 35;
-				chatTextDrawingArea.method382(0xffffff, c / 2, "To create a new account you need to", k, true);
-				k += 15;
-				chatTextDrawingArea.method382(0xffffff, c / 2, "go back to the main RuneScape webpage", k, true);
-				k += 15;
-				chatTextDrawingArea.method382(0xffffff, c / 2, "and choose the white 'Register' button", k, true);
-				k += 15;
-				chatTextDrawingArea.method382(0xffffff, c / 2, "on the top of that page (RuneScape.com).", k, true);
-				k += 15;
-				int j1 = c / 2;
-				int i2 = c1 / 2 + 50;
-				titleButton.drawBackground(j1 - 73, i2 - 20);
-				chatTextDrawingArea.method382(0xffffff, j1, "Cancel", i2 + 5, true);
-			}
-			loginScreenArea.drawGraphics(171, super.graphics, 202);
-			if(welcomeScreenRaised) {
-				welcomeScreenRaised = false;
-				aRSImageProducer_1107.drawGraphics(0, super.graphics, 128);
-				aRSImageProducer_1108.drawGraphics(371, super.graphics, 202);
-				gameLogo.drawGraphics(265, super.graphics, 0);
-				aRSImageProducer_1113.drawGraphics(265, super.graphics, 562);
-				aRSImageProducer_1114.drawGraphics(171, super.graphics, 128);
-				aRSImageProducer_1115.drawGraphics(171, super.graphics, 562);
-			}
-		} else if(normalLogin == false) {
-			//nothing
+	private void drawLoginScreen(boolean flag) {
+		backgroundFuck.drawSprite(0, 0);
+		resetImageProducers();
+		loginScreenArea.initDrawingArea();
+		titleBox.drawBackground(254, 140);
+		char c = '\u0168';
+		char c1 = '\310';
+		if (loginScreenState == 0) {
+			int i = 100;
+			aTextDrawingArea_1271.method382(0x75a9a9, c / 190,
+					onDemandFetcher.statusString, i, true);
+			int l = 275;
+			int k1 = 300;
+((super.mouseX >= 295 && super.mouseX <= 474 && super.mouseY >= 301 && super.mouseY <= 326) 
+? loginHover : titleButton).drawBackground(296, 301);
+			((super.mouseX >= 277 && super.mouseX <= 490 && super.mouseY >= 199 && super.mouseY <= 224) ? boxHover
+					: box).drawBackground(277, 198);
+			((super.mouseX >= 277 && super.mouseX <= 490 && super.mouseY >= 244 && super.mouseY <= 270) ? boxHover
+					: box).drawBackground(277, 244);
+	  this.smallText.method382(16777215, 385, this.loginMessage1, 283, true);
+      this.smallText.method382(16777215, 385, this.loginMessage2, 297, true);
+	  
+			int j = 277;
+        this.aTextDrawingArea_1271.method389(false, 281, 16777215, new StringBuilder().append("").append(capitalize(myUsername)).append(((this.loginScreenCursorPos == 0 ? 1 : 0) & (loopCycle % 40 < 20 ? 1 : 0)) != 0 ? "|" : "").toString(), 217);
+        this.aTextDrawingArea_1271.method389(true, 281, 16777215, new StringBuilder().append("").append(TextClass.passwordAsterisks(myPassword)).append(((this.loginScreenCursorPos == 1 ? 1 : 0) & (loopCycle % 40 < 20 ? 1 : 0)) != 0 ? "|" : "").toString(), 263);
+		}
+	loginScreenArea.drawGraphics(0, super.graphics, 0);
+	  if (welcomeScreenRaised) {
+			/*welcomeScreenRaised = false;
+			leftSideFlame.drawGraphics(0, super.graphics, 128);
+			rightSideFlame.drawGraphics(371, super.graphics, 202);
+			gameLogo.drawGraphics(265, super.graphics, 0);
+			aRSImageProducer_1113.drawGraphics(265, super.graphics, 562);
+			aRSImageProducer_1114.drawGraphics(171, super.graphics, 128);
+			aRSImageProducer_1115.drawGraphics(171, super.graphics, 562);*/
 		}
 	}
 
@@ -10516,92 +10472,82 @@ public static int loginHovered, CheckHovered;
 		}
 	}
 
-private void processLoginScreenInput() {
-		///if(normalLogin == true) {
-			if(loginScreenState == 0) {
-				int width = super.myWidth / 2 - 80;
-				int height = super.myHeight / 2 + 20;
-				height += 20;
-				if(super.clickMode3 == 1 && super.saveClickX >= width - 75 && super.saveClickX <= width + 75 && super.saveClickY >= height - 20 && super.saveClickY <= height + 20) {
-					loginScreenState = 3;
-					loginScreenCursorPos = 0;
+	private void processLoginScreenInput() {
+	if (this.loginScreenState == 0) {
+		int l = super.myHeight / 2 + 20;
+		l += 20;
+        int i = this.myHeight / 2 - 40;
+        i += 30;
+        i += 25;
+         resetImage();
+			if (super.clickMode3 == 1 && super.saveClickX >= 276
+					&& super.saveClickX <= 490 && super.saveClickY >= 194
+					&& super.saveClickY <= 223)
+				loginScreenCursorPos = 0;
+			if (super.clickMode3 == 1 && super.mouseX >= 276
+					&& super.mouseX <= 490 && super.mouseY >= 240
+					&& super.mouseY <= 270)
+				loginScreenCursorPos = 1;
+			if (super.clickMode3 == 1 && super.saveClickX >= 295
+					&& super.saveClickX <= 474 && super.saveClickY >= 301
+					&& super.saveClickY <= 325) {
+				loginFailures = 0;
+		    if ((myUsername.length() > 0) && (myPassword.length() > 0)) {
+            login(myUsername, myPassword, false);
+          } else {
+            this.loginScreenCursorPos = 0;
+            this.loginMessage1 = "Username & Password";
+            this.loginMessage2 = "Must be more than 1 character";
+          }
+          if (this.loggedIn)
+            return;
+        }
+			do {
+				int l1 = readChar(-796);
+				if (l1 == -1)
+					break;
+				boolean flag1 = false;
+				for (int i2 = 0; i2 < validUserPassChars.length(); i2++) {
+					if (l1 != validUserPassChars.charAt(i2))
+						continue;
+					flag1 = true;
+					break;
 				}
-				width = super.myWidth / 2 + 80;
-				if(super.clickMode3 == 1 && super.saveClickX >= width - 75 && super.saveClickX <= width + 75 && super.saveClickY >= height - 20 && super.saveClickY <= height + 20) {
-					loginMessage1 = "";
-					loginMessage2 = "Enter your username & password.";
-					loginScreenState = 2;
-					loginScreenCursorPos = 0;
-				}
-			} else {
-				if(loginScreenState == 2) {
-					int height = super.myHeight / 2 - 40;
-					height += 30;
-					height += 25;
-					if(super.clickMode3 == 1 && super.saveClickY >= height - 15 && super.saveClickY < height)
-						loginScreenCursorPos = 0;
-					height += 15;
-					if(super.clickMode3 == 1 && super.saveClickY >= height - 15 && super.saveClickY < height)
+
+				if (loginScreenCursorPos == 0) {
+					if (l1 == 8 && myUsername.length() > 0)
+						myUsername = myUsername.substring(0,
+								myUsername.length() - 1);
+					if (l1 == 9 || l1 == 10 || l1 == 13)
 						loginScreenCursorPos = 1;
-					height += 15;
-					int width = super.myWidth / 2 - 80;
-					int height_1 = super.myHeight / 2 + 50;
-					height_1 += 20;
-					if(super.clickMode3 == 1 && super.saveClickX >= width - 75 && super.saveClickX <= width + 75 && super.saveClickY >= height_1 - 20 && super.saveClickY <= height_1 + 20) {
-						loginFailures = 0;
-						login(capitalize(myUsername), myPassword, false);
-						if(loggedIn)
-							return;
-					}
-					width = super.myWidth / 2 + 80;
-					if(super.clickMode3 == 1 && super.saveClickX >= width - 75 && super.saveClickX <= width + 75 && super.saveClickY >= height_1 - 20 && super.saveClickY <= height_1 + 20) {
-						loginScreenState = 0;
-						myUsername = "";
-						myPassword = "";
-					}
-					do {
-						int l1 = readChar(-796);
-						if(l1 == -1)
-							break;
-						boolean flag1 = false;
-						for(int i2 = 0; i2 < validUserPassChars.length(); i2++) {
-							if(l1 != validUserPassChars.charAt(i2))
-								continue;
-							flag1 = true;
-							break;
-						} if(loginScreenCursorPos == 0) {
-							if(l1 == 8 && myUsername.length() > 0)
-								myUsername = myUsername.substring(0, myUsername.length() - 1);
-							if(l1 == 9 || l1 == 10 || l1 == 13)
-								loginScreenCursorPos = 1;
-							if(flag1)
-								myUsername += (char)l1;
-							if(myUsername.length() > 12)
-								myUsername = capitalize(myUsername.substring(0, 12));
-						} else if(loginScreenCursorPos == 1) {
-							if(l1 == 8 && myPassword.length() > 0)
-								myPassword = myPassword.substring(0, myPassword.length() - 1);
-							if(l1 == 9 || l1 == 10 || l1 == 13)
-								login(capitalize(myUsername), myPassword, false);
-							if(flag1)
-								myPassword += (char)l1;
-							if(myPassword.length() > 20)
-								myPassword = myPassword.substring(0, 20);
-						}
-					} while(true);
-					return;
+					if (flag1)
+						myUsername += (char) l1;
+					if (myUsername.length() > 12)
+						myUsername = myUsername.substring(0, 12);
+				} else if (loginScreenCursorPos == 1) {
+					if (l1 == 8 && myPassword.length() > 0)
+						myPassword = myPassword.substring(0,
+								myPassword.length() - 1);
+					if (l1 == 9 || l1 == 10 || l1 == 13)
+						loginScreenCursorPos = 0;
+					if (flag1)
+						myPassword += (char) l1;
+					if (myPassword.length() > 20)
+						myPassword = myPassword.substring(0, 20);
 				}
-				if(loginScreenState == 3) {
-					int width = super.myWidth / 2;
-					int height = super.myHeight / 2 + 50;
-					height += 20;
-					if(super.clickMode3 == 1 && super.saveClickX >= width - 75 && super.saveClickX <= width + 75 && super.saveClickY >= height - 20 && super.saveClickY <= height + 20)
-						loginScreenState = 0;
-				}
-			}
-		///} else if(normalLogin == false) {
-		/// Custom Login Screen areas and crap
-		///}
+			} while (true);
+			return;
+		}
+		if (loginScreenState == 3) {
+			int k = super.myWidth / 2;
+			int j1 = super.myHeight / 2 + 50;
+			j1 += 20;
+			if (super.clickMode3 == 1 && super.saveClickX >= k - 75
+					&& super.saveClickX <= k + 75
+					&& super.saveClickY >= j1 - 20
+					&& super.saveClickY <= j1 + 20)
+				loginScreenState = 0;
+		}
 	}
 
 
@@ -12798,6 +12744,9 @@ else if(rights == 4)
 		0xffff00, 0xff0000, 65280, 65535, 0xff00ff, 0xffffff
 	};
 	private Background titleBox;
+	private Background loginHover;
+	private Background box;
+	private Background boxHover;
 	public Sprite titleBox1;
 	private Background titleButton;
 	private final int[] anIntArray968;
@@ -13144,7 +13093,7 @@ else if(rights == 4)
 	public Sprite
 		LFull, LEmpty, quickChat, globe, mapArea, infinity, VET, DESIGNER, DONATOR,
 		oldBarFull, oldBarEmpty, newBarFull, newBarEmpty;
-		
+	public Sprite backgroundFuck;	
 	public Sprite
 		Orb, OrbHov, Empty;
 	public Sprite[]
