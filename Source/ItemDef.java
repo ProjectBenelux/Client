@@ -786,7 +786,8 @@ int l5 = sprite.maxWidth;
 			for (int l = 0; l < editedModelColor.length; l++)
 				model.method476(editedModelColor[l], newModelColor[l]);
 		}
-		model.method479(64 + anInt196, 768 + anInt184, -50, -10, -50, true);
+		//model.method479(64 + anInt196, 768 + anInt184, -50, -10, -50, true); //Normal Invertory Models
+		model.method479(64 + anInt196, 768 + anInt184, -50, -1000, -50, true); //HD Invertory Models
 		model.aBoolean1659 = true;
 		mruNodes2.removeFromCache(model, id);
 		return model;

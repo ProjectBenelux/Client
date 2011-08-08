@@ -1973,35 +1973,11 @@ setHighMem();
 										hitMarkLong[((Entity) (obj)).hitMarkTypes[sprite]].drawSprite(spriteDrawX - 20, spriteDrawY - 13);
 										smallText.drawText(0, String.valueOf(((Entity) (obj)).hitArray[sprite]), spriteDrawY + 4, spriteDrawX);
 										smallText.drawText(0xffffff, String.valueOf(((Entity) (obj)).hitArray[sprite]), spriteDrawY + 3, spriteDrawX - 1);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 									} else if(((Entity) (obj)).hitArray[sprite] <= 99) {
 										hitMark[((Entity) (obj)).hitMarkTypes[sprite]].drawSprite(spriteDrawX - 12, spriteDrawY - 12);
 										smallText.drawText(0, String.valueOf(((Entity) (obj)).hitArray[sprite]), spriteDrawY + 4, spriteDrawX);
 										smallText.drawText(0xffffff, String.valueOf(((Entity) (obj)).hitArray[sprite]), spriteDrawY + 3, spriteDrawX - 1);
 									}
-
-
-
-
 
 
 								} else {
