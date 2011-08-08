@@ -116,6 +116,7 @@ public static String loc = signlink.findcachedir()+"Data/";
 		editedModelColor = null;
 		newModelColor = null;
 		modelZoom = 2000;
+		modelid = 0;
 		ModelRotationY = 0;
 		ModelRotationX = 0;
 		anInt204 = 0;
@@ -126,6 +127,7 @@ public static String loc = signlink.findcachedir()+"Data/";
 		membersObject = false;
 		groundActions = null;
 		actions = null;
+		itemActions = null;
 		anInt165 = -1;
 		anInt188 = -1;
 		aByte205 = 0;
@@ -197,6 +199,269 @@ if (itemDef.editedModelColor != null) {
 				}
 			}
 		}
+		switch (itemDef.id) {
+		case 13362:
+		itemDef.modelid = 62714;
+		itemDef.name = "Torva full helm";
+		itemDef.description = "Torva full helm.";
+		itemDef.modelZoom = 672;
+		itemDef.modelRotationY = 85;
+		itemDef.ModelRotationX = 1867;
+		itemDef.modelOffset1 = 0;
+		itemDef.modelOffset2 = -3;
+		itemDef.anInt165 = 62738;
+		itemDef.anInt200 = 62754;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[2] = "Check-charges";
+		itemDef.itemActions[4] = "Drop";
+		break;	
+case 13360:
+		itemDef.modelid = 62701;
+		itemDef.name = "Torva platelegs";
+		itemDef.description = "Torva platelegs.";
+		itemDef.modelZoom = 1740;
+		itemDef.modelRotationY = 474;
+		itemDef.ModelRotationX = 2045;
+		itemDef.modelOffset1 = 0;
+		itemDef.modelOffset2 = -5;
+		itemDef.anInt165 = 62743;
+		itemDef.anInt200 = 62760;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[2] = "Check-charges";
+		itemDef.itemActions[4] = "Drop";
+	break;
+	case 13358:
+		itemDef.modelid = 62699;
+		itemDef.name = "Torva platebody";
+		itemDef.description = "Torva Platebody.";
+		itemDef.modelZoom = 1506;
+		itemDef.modelRotationY = 473;
+		itemDef.ModelRotationX = 2042;
+		itemDef.modelOffset1 = 0;
+		itemDef.modelOffset2 = 0;
+		itemDef.anInt165 = 62746;
+		itemDef.anInt200 = 62762;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[2] = "Check-charges";
+		itemDef.itemActions[4] = "Drop";
+	break;
+		case 13355:
+		itemDef.modelid = 62693;
+		itemDef.name = "Pernix cowl";
+		itemDef.description = "Pernix cowl";
+		itemDef.modelZoom = 800;
+		itemDef.modelRotationY = 532;
+		itemDef.ModelRotationX = 14;
+		itemDef.modelOffset1 = -1;
+		itemDef.modelOffset2 = 1;
+		itemDef.anInt165 = 62739;
+		itemDef.anInt200 = 62756;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[2] = "Check-charges";
+		itemDef.itemActions[4] = "Drop";
+		itemDef.anInt175 = 62731;
+		itemDef.anInt197 = 62727;
+	break;
+	case 13354:
+		itemDef.modelid = 62709;
+		itemDef.name = "Pernix body";
+		itemDef.description = "Pernix body";
+		itemDef.modelZoom = 1378;
+		itemDef.modelRotationY = 485;
+		itemDef.ModelRotationX = 2042;
+		itemDef.modelOffset1 = -1;
+		itemDef.modelOffset2 = 7;
+		itemDef.anInt165 = 62744;
+		itemDef.anInt200 = 62765;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[2] = "Check-charges";
+		itemDef.itemActions[4] = "Drop";
+	break;
+	case 13352:
+		itemDef.modelid = 62695;
+		itemDef.name = "Pernix chaps";
+		itemDef.description = "Pernix chaps";
+		itemDef.modelZoom = 1740;
+		itemDef.modelRotationY = 504;
+		itemDef.ModelRotationX = 0;
+		itemDef.modelOffset1 = 4;
+		itemDef.modelOffset2 = 3;
+		itemDef.anInt165 = 62741;
+		itemDef.anInt200 = 62757;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[2] = "Check-charges";
+		itemDef.itemActions[4] = "Drop";
+	break;
+
+	case 13350:
+		itemDef.modelid = 62710;
+		itemDef.name = "Virtus mask";
+		itemDef.description = "Virtus mask";
+		itemDef.modelZoom = 928;
+		itemDef.modelRotationY = 406;
+		itemDef.ModelRotationX = 2041;
+		itemDef.modelOffset1 = 1;
+		itemDef.modelOffset2 = -5;
+		itemDef.anInt165 = 62736;
+		itemDef.anInt200 = 62755;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[2] = "Check-charges";
+		itemDef.itemActions[4] = "Drop";
+		itemDef.anInt175 = 62728;
+		itemDef.anInt197 = 62728;
+	break;
+
+	case 13348:
+		itemDef.modelid = 62704;
+		itemDef.name = "Virtus robe top";
+		itemDef.description = "Virtus robe top";
+		itemDef.modelZoom = 1122;
+		itemDef.modelRotationY = 488;
+		itemDef.ModelRotationX = 3;
+		itemDef.modelOffset1 = 1;
+		itemDef.modelOffset2 = 0;
+		itemDef.anInt165 = 62748;
+		itemDef.anInt200 = 62764;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[2] = "Check-charges";
+		itemDef.itemActions[4] = "Drop";
+	break;
+
+	case 13346:
+		itemDef.modelid = 62700;
+		itemDef.name = "Virtus robe legs";
+		itemDef.description = "Virtus robe legs";
+		itemDef.modelZoom = 1740;
+		itemDef.modelRotationY = 498;
+		itemDef.ModelRotationX = 2045;
+		itemDef.modelOffset1 = -1;
+		itemDef.modelOffset2 = 4;
+		itemDef.anInt165 = 62742;
+		itemDef.anInt200 = 62758;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[2] = "Check-charges";
+		itemDef.itemActions[4] = "Drop";
+	break;
+	case 13344:
+		itemDef.modelid = 62694;
+		itemDef.name = "Ancient ceremonial hood";
+		itemDef.modelZoom = 980;
+		itemDef.modelRotationY = 208;
+		itemDef.ModelRotationX = 220;
+		itemDef.modelOffset1 = 0;
+		itemDef.modelOffset2 = -18;
+		itemDef.anInt165 = 62737;
+		itemDef.anInt200 = 62753;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[4] = "Drop";
+		itemDef.anInt175 = 62730;
+		itemDef.anInt197 = 62730;
+	break;
+
+	case 13342:
+		itemDef.modelid = 62705;
+		itemDef.name = "Ancient ceremonial top";
+		itemDef.modelZoom = 1316;
+		itemDef.modelRotationY = 477;
+		itemDef.ModelRotationX = 9;
+		itemDef.modelOffset1 = 0;
+		itemDef.modelOffset2 = 13;
+		itemDef.anInt165 = 62745;
+		itemDef.anInt200 = 62763;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[4] = "Drop";
+		itemDef.anInt204 = 54;
+	break;
+
+	case 13340:
+		itemDef.modelid = 62707;
+		itemDef.name = "Ancient ceremonial legs";
+		itemDef.modelZoom = 1828;
+		itemDef.modelRotationY = 539;
+		itemDef.ModelRotationX = 0;
+		itemDef.modelOffset1 = -1;
+		itemDef.modelOffset2 = 0;
+		itemDef.anInt165 = 62740;
+		itemDef.anInt200 = 62759;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[4] = "Drop";
+		itemDef.anInt204 = 40;
+		itemDef.anInt196 = 30;
+		itemDef.anInt184 = 100;
+	break;
+
+	case 13370:
+		itemDef.modelid = 62697;
+		itemDef.name = "Ancient ceremonial gloves";
+		itemDef.modelZoom = 548;
+		itemDef.modelRotationY = 618;
+		itemDef.ModelRotationX = 1143;
+		itemDef.modelOffset1 = 0;
+		itemDef.modelOffset2 = -5;
+		itemDef.anInt165 = 62735;
+		itemDef.anInt200 = 62752;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[4] = "Drop";
+	break;
+
+	case 13336:
+		itemDef.modelid = 62696;
+		itemDef.name = "Ancient ceremonial boots";
+		itemDef.modelZoom = 676;
+		itemDef.modelRotationY = 63;
+		itemDef.ModelRotationX = 106;
+		itemDef.modelOffset1 = 5;
+		itemDef.modelOffset2 = -1;
+		itemDef.anInt165 = 62734;
+		itemDef.anInt200 = 62751;
+		itemDef.groundActions = new String[5];
+		itemDef.groundActions[2] = "Take";
+		itemDef.itemActions = new String[5];
+		itemDef.itemActions[1] = "Wear";
+		itemDef.itemActions[4] = "Drop";
+	break;
+
+}
+
 
 
 
@@ -566,10 +831,12 @@ int l5 = sprite.maxWidth;
 	public int anInt167;
 	public String groundActions[];
 	public int modelOffset1;
+	public String itemActions[];
 	public String name;
 	public static ItemDef[] cache;
 	public int anInt173;
 	public int modelID;
+	public int modelid;
 	public int anInt175;
 	public boolean stackable;
 	public String description;
@@ -590,11 +857,13 @@ int l5 = sprite.maxWidth;
 	public static int[] streamIndices;
 	public int anInt196;
 	public int anInt197;
-	public int ModelRotationX;
+	public int modelRotationY;
+
 	public int anInt200;
 	public int[] stackAmounts;
 	public int team;
 	public static int totalItems;
+	public int ModelRotationX;
 	public int anInt204;
 	public byte aByte205;
 	public int lendID;

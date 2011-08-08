@@ -3266,37 +3266,71 @@ setHighMem();
 			return super.getAppletContext();
 	}
 
-private void drawLogo() {
+	private void drawLogo() { 
 		byte abyte0[] = titleStreamLoader.getDataForName("title.dat");
 		Sprite sprite = new Sprite(abyte0, this);
-		
+		if(normalLogin == true) {
 			leftSideFlame.initDrawingArea();
-	        sprite.method346(0, 0);
-	        rightSideFlame.initDrawingArea();
-	        sprite.method346(-637, 0);
-	        aRSImageProducer_1107.initDrawingArea();
-	        sprite.method346(-128, 0);
-	        aRSImageProducer_1108.initDrawingArea();
-	        sprite.method346(-202, -371);
-	        loginScreenArea.initDrawingArea();
-	        sprite.method346(0, 0);
-	        gameLogo.initDrawingArea();
-	        sprite.method346(0, -265);
-	        aRSImageProducer_1113.initDrawingArea();
-	        sprite.method346(-562, -265);
-	        aRSImageProducer_1114.initDrawingArea();
-	        sprite.method346(-128, -171);
-	        aRSImageProducer_1115.initDrawingArea();
-	        sprite.method346(-562, -171);
-			
-	        int backgroundPixels[] = new int[sprite.myWidth];
-	        for (int j = 0; j < sprite.myHeight; j++) {
-	            for (int k = 0; k < sprite.myWidth; k++)
-	                backgroundPixels[k] = sprite.myPixels[(sprite.myWidth - k - 1) + sprite.myWidth * j];
-
-	            System.arraycopy(backgroundPixels, 0, sprite.myPixels, sprite.myWidth * j, sprite.myWidth);
-
-	        }			
+			sprite.method346(0, 0);
+			rightSideFlame.initDrawingArea();
+			sprite.method346(-637, 0);
+			aRSImageProducer_1107.initDrawingArea();
+			sprite.method346(-128, 0);
+			aRSImageProducer_1108.initDrawingArea();
+			sprite.method346(-202, -371);
+			loginScreenArea.initDrawingArea();
+			sprite.method346(-202, -171);
+			gameLogo.initDrawingArea();
+			sprite.method346(0, -265);
+			aRSImageProducer_1113.initDrawingArea();
+			sprite.method346(-562, -265);
+			aRSImageProducer_1114.initDrawingArea();
+			sprite.method346(-128, -171);
+			aRSImageProducer_1115.initDrawingArea();
+			sprite.method346(-562, -171);
+			int ai[] = new int[sprite.myWidth];
+			for(int j = 0; j < sprite.myHeight; j++) {
+				for(int k = 0; k < sprite.myWidth; k++)
+					ai[k] = sprite.myPixels[(sprite.myWidth - k - 1) + sprite.myWidth * j];
+				System.arraycopy(ai, 0, sprite.myPixels, sprite.myWidth * j, sprite.myWidth);
+			}
+		if(normalLogin == true) {
+			/*leftSideFlame.initDrawingArea();
+			sprite.method346(382, 0);
+			rightSideFlame.initDrawingArea();
+			sprite.method346(-255, 0);
+			aRSImageProducer_1107.initDrawingArea();
+			sprite.method346(254, 0);
+			aRSImageProducer_1108.initDrawingArea();
+			sprite.method346(180, -371);
+			loginScreenArea.initDrawingArea();
+			sprite.method346(180, -171);
+			gameLogo.initDrawingArea();
+			sprite.method346(382, -265);
+			aRSImageProducer_1113.initDrawingArea();
+			sprite.method346(-180, -265);
+			aRSImageProducer_1114.initDrawingArea();
+			sprite.method346(254, -171);
+			aRSImageProducer_1115.initDrawingArea();
+			sprite.method346(-180, -171);*/
+			sprite = new Sprite(titleStreamLoader, "logo", 0);
+		        aRSImageProducer_1107.initDrawingArea();
+			//sprite.drawSprite(382 - sprite.myWidth / 2 - 128, 18);
+		}
+		} else {
+			int ai[] = new int[sprite.myWidth];
+			for(int j = 0; j < sprite.myHeight; j++) {
+				for(int k = 0; k < sprite.myWidth; k++)
+					ai[k] = sprite.myPixels[(sprite.myWidth - k - 1) + sprite.myWidth * j];
+				System.arraycopy(ai, 0, sprite.myPixels, sprite.myWidth * j, sprite.myWidth);
+			}
+			LFull = new Sprite(signlink.findcachedir()+"/Sprites/LFull.png");
+			LEmpty = new Sprite(signlink.findcachedir()+"/Sprites/LEmpty.png");
+			Sprite logo = new Sprite(signlink.findcachedir()+"/Sprites/Logo.PNG");
+			logo.drawSprite(385-174-174, 14+25);
+			loginScreenArea.initDrawingArea();
+			sprite.method346(0, 0);
+		}
 		sprite = null;
 		Object obj = null;
 		Object obj1 = null;
