@@ -1,5 +1,8 @@
 
 
+import java.io.*;
+import java.net.*;
+import java.util.zip.*;
 
 public class Model extends Animable {
 
@@ -403,7 +406,7 @@ read622Model(is, modelId);
 readOldModel(modelId);
 
 
-
+	
   }
 
   public void scale2(int i) {
@@ -818,7 +821,14 @@ scale2(4);
   }
 
  	private void readOldModel(int i) {//Old model header
+		int j = -870;
+		anInt1614 = 9;
+		aBoolean1615 = false;
+		anInt1616 = 360;
+		anInt1617 = 1;
+		aBoolean1618 = true;
 		aBoolean1659 = false;
+		anInt1620++;
 		Class21 class21 = aClass21Array1661[i];
 		anInt1626 = class21.anInt369;
 		anInt1630 = class21.anInt370;
@@ -828,6 +838,8 @@ scale2(4);
 		anIntArray1629 = new int[anInt1626];
 		anIntArray1631 = new int[anInt1630];
 		anIntArray1632 = new int[anInt1630];
+		while (j >= 0)
+			aBoolean1618 = !aBoolean1618;
 		anIntArray1633 = new int[anInt1630];
 		anIntArray1643 = new int[anInt1642];
 		anIntArray1644 = new int[anInt1642];

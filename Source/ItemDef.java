@@ -3,6 +3,9 @@ import java.io.*;
 
 public final class ItemDef {
 
+
+
+
 	public static void nullLoader() {
 		mruNodes2 = null;
 		mruNodes1 = null;
@@ -12,9 +15,14 @@ public final class ItemDef {
 	}
 public static String loc = signlink.findcachedir()+"Data/";
 	public static byte[] getData(String s) {
+
+
+
+
+
+
 		return FileOperations.ReadFile(s);
 	}
-
 	public boolean method192(int j) {
 		int k = anInt175;
 		int l = anInt166;
@@ -48,6 +56,7 @@ public static String loc = signlink.findcachedir()+"Data/";
 			model = new Model(2, models);
 		}
 		if (editedModelColor != null) {
+
 			for (int i1 = 0; i1 < editedModelColor.length; i1++)
 				model.method476(editedModelColor[i1], newModelColor[i1]);
 		}
@@ -103,6 +112,7 @@ public static String loc = signlink.findcachedir()+"Data/";
 		if (i == 1 && aByte154 != 0)
 			model.method475(0, aByte154, 0);
 		if (editedModelColor != null) {
+
 			for (int i1 = 0; i1 < editedModelColor.length; i1++)
 				model.method476(editedModelColor[i1], newModelColor[i1]);
 		}
@@ -115,10 +125,14 @@ public static String loc = signlink.findcachedir()+"Data/";
 		description = null;
 		editedModelColor = null;
 		newModelColor = null;
+
+
 		modelZoom = 2000;
 		modelid = 0;
 		ModelRotationY = 0;
 		ModelRotationX = 0;
+
+
 		anInt204 = 0;
 		modelOffset1 = 0;
 		modelOffset2 = 0;
@@ -128,6 +142,8 @@ public static String loc = signlink.findcachedir()+"Data/";
 		groundActions = null;
 		actions = null;
 		itemActions = null;
+
+
 		anInt165 = -1;
 		anInt188 = -1;
 		aByte205 = 0;
@@ -154,10 +170,14 @@ public static String loc = signlink.findcachedir()+"Data/";
 		lentItemID = -1;
 	}
 
+
+
 public static void unpackConfig(NamedArchive streamLoader) {
 		    stream = new ByteBuffer(getData(loc+"obj.dat"));
         ByteBuffer stream = new ByteBuffer(getData(loc+"obj.idx"));
+
 		totalItems = stream.readUnsignedWord();
+
 		streamIndices = new int[totalItems];
 		int i = 2;
 		for (int j = 0; j < totalItems; j++) {
@@ -236,6 +256,7 @@ case 13360:
 		itemDef.itemActions[2] = "Check-charges";
 		itemDef.itemActions[4] = "Drop";
 	break;
+
 	case 13358:
 		itemDef.modelid = 62699;
 		itemDef.name = "Torva platebody";
@@ -274,6 +295,7 @@ case 13360:
 		itemDef.anInt175 = 62731;
 		itemDef.anInt197 = 62727;
 	break;
+
 	case 13354:
 		itemDef.modelid = 62709;
 		itemDef.name = "Pernix body";
@@ -292,6 +314,7 @@ case 13360:
 		itemDef.itemActions[2] = "Check-charges";
 		itemDef.itemActions[4] = "Drop";
 	break;
+
 	case 13352:
 		itemDef.modelid = 62695;
 		itemDef.name = "Pernix chaps";
@@ -474,126 +497,252 @@ if (itemDef.editedModelColor == null) {
 			}
 		}
 		return itemDef;
+
+
+
+
 	}
 	
 	private void readValues(ByteBuffer stream) {
 		do {
+
+
+
 			int i = stream.readUnsignedByte();
 			if (i == 0)
 				return;
 			if (i == 1) {
 				modelID = stream.readUnsignedWord();
 			} else if (i == 2)
+
+
+
 				name = stream.readString();
 			else if (i == 3)
+
+
 				description = stream.readString();
 			else if (i == 4)
+
+
 				modelZoom = stream.readUnsignedWord();
 			else if (i == 5)
+
+
 				ModelRotationY = stream.readUnsignedWord();
 			else if (i == 6)
+
+
 				ModelRotationX = stream.readUnsignedWord();
 			else if (i == 7) {
+
+
+
 				modelOffset1 = stream.readUnsignedWord();
 				if (modelOffset1 > 32767)
 					modelOffset1 -= 0x10000;
 			} else if (i == 8) {
+
+
+
 				modelOffset2 = stream.readUnsignedWord();
 				if (modelOffset2 > 32767)
 					modelOffset2 -= 0x10000;
 			} else if (i == 10)
+
+
 				stream.readUnsignedWord();
 			else if (i == 11)
+
+
 				stackable = true;
 			else if (i == 12)
+
+
 				value = stream.readUnsignedWord();
 			else if (i == 16)
+
+
+
 				membersObject = true;
 			else if (i == 23) {
+
+
+
 				anInt165 = stream.readUnsignedWord();
 				aByte205 = stream.readSignedByte();
 			} else if (i == 24)
+
+
 				anInt188 = stream.readUnsignedWord();
 			else if (i == 25) {
+
+
+
 				anInt200 = stream.readUnsignedWord();
 				aByte154 = stream.readSignedByte();
 			} else if (i == 26)
+
+
 				anInt164 = stream.readUnsignedWord();
 			else if (i >= 30 && i < 35) {
+
+
+
 				if (groundActions == null)
 					groundActions = new String[5];
 				groundActions[i - 30] = stream.readString();
 				if (groundActions[i - 30].equalsIgnoreCase("hidden"))
 					groundActions[i - 30] = null;
 			} else if (i >= 35 && i < 40) {
+
+
+
 				if (actions == null)
 					actions = new String[5];
 				actions[i - 35] = stream.readString();
 				if (actions[i - 35].equalsIgnoreCase("null"))
 					actions[i - 35] = null;
 			} else if (i == 40) {
+
+
+
 				int j = stream.readUnsignedByte();
 				editedModelColor = new int[j];
+
 				newModelColor = new int[j];
 				for (int k = 0; k < j; k++) {
+
+
 					editedModelColor[k] = stream.readUnsignedWord();
 					newModelColor[k] = stream.readUnsignedWord();
 				}
 			} else if (i == 78)
+
+
+
 				anInt185 = stream.readUnsignedWord();
 			else if (i == 79)
+
+
 				anInt162 = stream.readUnsignedWord();
 			else if (i == 90)
+
+
 				anInt175 = stream.readUnsignedWord();
 			else if (i == 91)
+
+
 				anInt197 = stream.readUnsignedWord();
 			else if (i == 92)
+
+
 				anInt166 = stream.readUnsignedWord();
 			else if (i == 93)
+
+
 				anInt173 = stream.readUnsignedWord();
 			else if (i == 95)
+
+
 				anInt204 = stream.readUnsignedWord();
 			else if (i == 97)
+
+
 				certID = stream.readUnsignedWord();
 			else if (i == 98)
+
+
 				certTemplateID = stream.readUnsignedWord();
 			else if (i >= 100 && i < 110) {
 				if (stackIDs == null) {
+
+
+
+
+
 					stackIDs = new int[10];
 					stackAmounts = new int[10];
 				}
 				stackIDs[i - 100] = stream.readUnsignedWord();
 				stackAmounts[i - 100] = stream.readUnsignedWord();
 			} else if (i == 110)
+
+
 				anInt167 = stream.readUnsignedWord();
 			else if (i == 111)
+
+
 				anInt192 = stream.readUnsignedWord();
 			else if (i == 112)
+
+
 				anInt191 = stream.readUnsignedWord();
 			else if (i == 113)
+
+
 				anInt196 = stream.readSignedByte();
 			else if (i == 114)
+
+
 				anInt184 = stream.readSignedByte() * 5;
 			else if (i == 115)
+
+
 				team = stream.readUnsignedByte();
 			else if (i == 116)
+
+
 				lendID = stream.readUnsignedWord();
 			else if (i == 117)
+
+
 				lentItemID = stream.readUnsignedWord();
 		} while (true);
 	}
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public void toNote() {
 		ItemDef itemDef = forID(certTemplateID);
 		modelID = itemDef.modelID;
 		modelZoom = itemDef.modelZoom;
 		ModelRotationY = itemDef.ModelRotationY;
 		ModelRotationX = itemDef.ModelRotationX;
+
+
 		anInt204 = itemDef.anInt204;
 		modelOffset1 = itemDef.modelOffset1;
 		modelOffset2 = itemDef.modelOffset2;
 		editedModelColor = itemDef.editedModelColor;
 		newModelColor = itemDef.newModelColor;
+
+
 		ItemDef itemDef_1 = forID(certID);
 		name = itemDef_1.name;
 		membersObject = itemDef_1.membersObject;
@@ -643,8 +792,13 @@ if (itemDef.editedModelColor == null) {
 
 	public static Sprite getSprite(int i, int j, int k) {
 		if (k == 0) {
+
+
+
+
 			Sprite sprite = (Sprite) mruNodes1.insertFromCache(i);
 			if (sprite != null && sprite.maxHeight != j && sprite.maxHeight != -1) {
+
 				sprite.unlink();
 				sprite = null;
 			}
@@ -655,10 +809,13 @@ if (itemDef.editedModelColor == null) {
 		if (itemDef.stackIDs == null)
 			j = -1;
 		if (j > 1) {
+
+
 			int i1 = -1;
 			for (int j1 = 0; j1 < 10; j1++)
 				if (j >= itemDef.stackAmounts[j1] && itemDef.stackAmounts[j1] != 0)
 					i1 = itemDef.stackIDs[j1];
+
 			if (i1 != -1)
 				itemDef = forID(i1);
 		}
@@ -667,11 +824,14 @@ if (itemDef.editedModelColor == null) {
 			return null;
 		Sprite sprite = null;
 		if (itemDef.certTemplateID != -1) {
+
+
 			sprite = getSprite(itemDef.certID, 10, -1);
 			if (sprite == null)
 				return null;
 		}
 		if (itemDef.lentItemID != -1) {
+
 			sprite = getSprite(itemDef.lendID, 50, 0);
 			if (sprite == null)
 				return null;
@@ -700,54 +860,94 @@ if (itemDef.editedModelColor == null) {
 		int i4 = Texture.anIntArray1471[itemDef.ModelRotationY] * k3 >> 16;
 		model.method482(itemDef.ModelRotationX, itemDef.anInt204, itemDef.ModelRotationY, itemDef.modelOffset1, l3 + model.modelHeight / 2 + itemDef.modelOffset2, i4 + itemDef.modelOffset2);
 		for (int i5 = 31; i5 >= 0; i5--) {
+
+
 			for (int j4 = 31; j4 >= 0; j4--)
 				if (sprite2.myPixels[i5 + j4 * 32] == 0)
 					if (i5 > 0 && sprite2.myPixels[(i5 - 1) + j4 * 32] > 1)
 						sprite2.myPixels[i5 + j4 * 32] = 1;
 					else if (j4 > 0 && sprite2.myPixels[i5 + (j4 - 1) * 32] > 1)
+
+
 						sprite2.myPixels[i5 + j4 * 32] = 1;
 					else if (i5 < 31 && sprite2.myPixels[i5 + 1 + j4 * 32] > 1)
+
+
 						sprite2.myPixels[i5 + j4 * 32] = 1;
 					else if (j4 < 31 && sprite2.myPixels[i5 + (j4 + 1) * 32] > 1)
+
+
 						sprite2.myPixels[i5 + j4 * 32] = 1;
+
 		}
 		if (k > 0) {
 			for (int j5 = 31; j5 >= 0; j5--) {
+
+
+
+
+
 				for (int k4 = 31; k4 >= 0; k4--)
 					if (sprite2.myPixels[j5 + k4 * 32] == 0)
 						if (j5 > 0 && sprite2.myPixels[(j5 - 1) + k4 * 32] == 1)
 							sprite2.myPixels[j5 + k4 * 32] = k;
 						else if (k4 > 0 && sprite2.myPixels[j5 + (k4 - 1) * 32] == 1)
+
+
 							sprite2.myPixels[j5 + k4 * 32] = k;
 						else if (j5 < 31 && sprite2.myPixels[j5 + 1 + k4 * 32] == 1)
+
+
 							sprite2.myPixels[j5 + k4 * 32] = k;
 						else if (k4 < 31 && sprite2.myPixels[j5 + (k4 + 1) * 32] == 1)
+
+
 							sprite2.myPixels[j5 + k4 * 32] = k;
+
 			}
 		} else if (k == 0) {
 			for (int k5 = 31; k5 >= 0; k5--) {
+
+
+
+
+
+
 				for (int l4 = 31; l4 >= 0; l4--)
 					if (sprite2.myPixels[k5 + l4 * 32] == 0 && k5 > 0 && l4 > 0 && sprite2.myPixels[(k5 - 1) + (l4 - 1) * 32] > 0)
 						sprite2.myPixels[k5 + l4 * 32] = 0x302020;
+
 			}
+
 		}
 		if (itemDef.certTemplateID != -1) {
+
+
 int l5 = sprite.maxWidth;
             int j6 = sprite.maxHeight;
             sprite.maxWidth = 32;
             sprite.maxHeight = 32;
+
+
             sprite.drawSprite(0, 0);
             sprite.maxWidth = l5;
             sprite.maxHeight = j6;
+
+
 		}
 		if (itemDef.lentItemID != -1) {
+
 int l5 = sprite.maxWidth;
             int j6 = sprite.maxHeight;
             sprite.maxWidth = 32;
             sprite.maxHeight = 32;
+
+
             sprite.drawSprite(0, 0);
             sprite.maxWidth = l5;
             sprite.maxHeight = j6;
+
+
 		}
 		if (k == 0)
 			mruNodes1.removeFromCache(sprite2, i);
@@ -783,6 +983,7 @@ int l5 = sprite.maxWidth;
 		if (anInt167 != 128 || anInt192 != 128 || anInt191 != 128)
 			model.method478(anInt167, anInt191, anInt192);
 		if (editedModelColor != null) {
+
 			for (int l = 0; l < editedModelColor.length; l++)
 				model.method476(editedModelColor[l], newModelColor[l]);
 		}
@@ -806,6 +1007,7 @@ int l5 = sprite.maxWidth;
 		if (model == null)
 			return null;
 		if (editedModelColor != null) {
+
 			for (int l = 0; l < editedModelColor.length; l++)
 				model.method476(editedModelColor[l], newModelColor[l]);
 		}

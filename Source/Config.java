@@ -21,7 +21,7 @@ public class Config {
 		is525 = false, //Gameframe style 525 revision.
 		idToggle = false, //Enable/Disabled the Child IDs on Interfaces.
 		newHitBar = true, //Newer hitpoint bar, or the old hitpoint bar.
-		menuToggle = false, //Newer Context menu, or the old Context menu.
+		menuToggle = true, //Newer Context menu, or the old Context menu.
 		namesToggle = false, //Names above a player/npcs head.
 		allowSky = false, //Allow the FOG, or the BLACK.
 		hitSplat = true,//Hitmarks - New expand, Old regular, Old Expand

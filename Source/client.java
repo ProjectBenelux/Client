@@ -57,7 +57,7 @@ public void models() {
 	}
 	public byte[] getModel(int Index) {
 		try {
-			File Model = new File("C:/7/"+Index+".gz");
+			File Model = new File("C:/ProjectBeneluxCache/Data/Raw/525/"+Index+".gz");
 			byte[] aByte = new byte[(int)Model.length()];
 			FileInputStream fis = new FileInputStream(Model);
 			fis.read(aByte);
