@@ -221,7 +221,7 @@ if (itemDef.editedModelColor != null) {
 		}
 		switch (itemDef.id) {
 		case 13362:
-		itemDef.modelid = 62714;
+		itemDef.modelID = 62714;
 		itemDef.name = "Torva full helm";
 		itemDef.description = "Torva full helm.";
 		itemDef.modelZoom = 672;
@@ -239,7 +239,7 @@ if (itemDef.editedModelColor != null) {
 		itemDef.itemActions[4] = "Drop";
 		break;	
 case 13360:
-		itemDef.modelid = 62701;
+		itemDef.modelID = 62701;
 		itemDef.name = "Torva platelegs";
 		itemDef.description = "Torva platelegs.";
 		itemDef.modelZoom = 1740;
@@ -258,7 +258,7 @@ case 13360:
 	break;
 
 	case 13358:
-		itemDef.modelid = 62699;
+		itemDef.modelID = 62699;
 		itemDef.name = "Torva platebody";
 		itemDef.description = "Torva Platebody.";
 		itemDef.modelZoom = 1506;
@@ -276,7 +276,7 @@ case 13360:
 		itemDef.itemActions[4] = "Drop";
 	break;
 		case 13355:
-		itemDef.modelid = 62693;
+		itemDef.modelID = 62693;
 		itemDef.name = "Pernix cowl";
 		itemDef.description = "Pernix cowl";
 		itemDef.modelZoom = 800;
@@ -297,7 +297,7 @@ case 13360:
 	break;
 
 	case 13354:
-		itemDef.modelid = 62709;
+		itemDef.modelID = 62709;
 		itemDef.name = "Pernix body";
 		itemDef.description = "Pernix body";
 		itemDef.modelZoom = 1378;
@@ -316,7 +316,7 @@ case 13360:
 	break;
 
 	case 13352:
-		itemDef.modelid = 62695;
+		itemDef.modelID = 62695;
 		itemDef.name = "Pernix chaps";
 		itemDef.description = "Pernix chaps";
 		itemDef.modelZoom = 1740;
@@ -335,7 +335,7 @@ case 13360:
 	break;
 
 	case 13350:
-		itemDef.modelid = 62710;
+		itemDef.modelID = 62710;
 		itemDef.name = "Virtus mask";
 		itemDef.description = "Virtus mask";
 		itemDef.modelZoom = 928;
@@ -356,7 +356,7 @@ case 13360:
 	break;
 
 	case 13348:
-		itemDef.modelid = 62704;
+		itemDef.modelID = 62704;
 		itemDef.name = "Virtus robe top";
 		itemDef.description = "Virtus robe top";
 		itemDef.modelZoom = 1122;
@@ -375,7 +375,7 @@ case 13360:
 	break;
 
 	case 13346:
-		itemDef.modelid = 62700;
+		itemDef.modelID = 62700;
 		itemDef.name = "Virtus robe legs";
 		itemDef.description = "Virtus robe legs";
 		itemDef.modelZoom = 1740;
@@ -393,7 +393,7 @@ case 13360:
 		itemDef.itemActions[4] = "Drop";
 	break;
 	case 13344:
-		itemDef.modelid = 62694;
+		itemDef.modelID = 62694;
 		itemDef.name = "Ancient ceremonial hood";
 		itemDef.modelZoom = 980;
 		itemDef.modelRotationY = 208;
@@ -412,7 +412,7 @@ case 13360:
 	break;
 
 	case 13342:
-		itemDef.modelid = 62705;
+		itemDef.modelID = 62705;
 		itemDef.name = "Ancient ceremonial top";
 		itemDef.modelZoom = 1316;
 		itemDef.modelRotationY = 477;
@@ -430,7 +430,7 @@ case 13360:
 	break;
 
 	case 13340:
-		itemDef.modelid = 62707;
+		itemDef.modelID = 62707;
 		itemDef.name = "Ancient ceremonial legs";
 		itemDef.modelZoom = 1828;
 		itemDef.modelRotationY = 539;
@@ -450,7 +450,7 @@ case 13360:
 	break;
 
 	case 13370:
-		itemDef.modelid = 62697;
+		itemDef.modelID = 62697;
 		itemDef.name = "Ancient ceremonial gloves";
 		itemDef.modelZoom = 548;
 		itemDef.modelRotationY = 618;
@@ -467,7 +467,7 @@ case 13360:
 	break;
 
 	case 13336:
-		itemDef.modelid = 62696;
+		itemDef.modelID = 62696;
 		itemDef.name = "Ancient ceremonial boots";
 		itemDef.modelZoom = 676;
 		itemDef.modelRotationY = 63;
