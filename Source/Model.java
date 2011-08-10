@@ -407,6 +407,10 @@ readOldModel(modelId);
 
 
 	
+		if(anIntArray1638 != null) {
+			for(int j = 0; j < anIntArray1638.length; j++)
+                    	anIntArray1638[j] = 10;
+			}
   }
 
   public void scale2(int i) {

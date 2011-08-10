@@ -236,7 +236,6 @@ if (itemDef.editedModelColor != null) {
 		itemDef.itemActions = new String[5];
 		itemDef.itemActions[1] = "Wear";
 		itemDef.itemActions[2] = "Check-charges";
-		itemDef.itemActions[4] = "Drop";
 		break;	
 case 13360:
 		itemDef.modelID = 62701;
@@ -246,7 +245,7 @@ case 13360:
 		itemDef.modelRotationY = 474;
 		itemDef.ModelRotationX = 2045;
 		itemDef.modelOffset1 = 0;
-		itemDef.modelOffset2 = -5;
+		itemDef.modelOffset2 = -5; //srry
 		itemDef.anInt165 = 62743;
 		itemDef.anInt200 = 62760;
 		itemDef.groundActions = new String[5];

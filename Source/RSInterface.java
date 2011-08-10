@@ -223,6 +223,7 @@ public class RSInterface {
 		aClass44 = archive;
 			optionTwo(rsFonts);
 			audio(rsFonts);
+			SummoningInterface(rsFonts);
 			graphic(rsFonts);
 			newTrade(rsFonts);
 			FriendList(rsFonts);
@@ -309,10 +310,427 @@ newteleport(rsFonts);
 		Y += 13;
 		}
 	}
+	public static void SummoningInterface(RSFont[] TDA) {
+		RSInterface Interface = addInterface(31350);
+			setChildren(65, Interface);
+			addHoverButton(29561, "Interfaces/SUMMONING/BUTTON", 0, 16, 16, "Close", 0, 29562, 1);//CLOSE
+        		addHoveredButton(29562, "Interfaces/SUMMONING/BUTTON", 1, 16, 16, 29563);//CLOSE HOVER
+        		addSprite(31349, 0, "Interfaces/Summoning/SUMMONING");//BACKGROUND
+
+			addHoverButton(31346, "Interfaces/Summoning/ARROW", 0, 17, 74, "Next", 0, 31347, 1);//NEXT PAGE
+        		addHoveredButton(31347, "Interfaces/Summoning/ARROW", 1, 17, 74, 31348);//NEXT PAGE HOVER
+
+
+			addButtons(31351, 1, "Interfaces/Summoning/SUM", "Make @or1@Spirit Wolf", 31352, 1);
+			drawTooltip(31352, "Spirit Wolf (lvl 1):\n1x Pouch, 7x Spirit Shards, 1x Gold Charm");
+
+			addButtons(31354, 2, "Interfaces/Summoning/SUM", "Make @or1@Spirit spider", 31355, 1);
+			drawTooltip(31355, "Spirit spider (lvl 10):\n1x Pouch, 8x Spirit Shards, 1x Gold Charm");
+
+			addButtons(31357, 3, "Interfaces/Summoning/SUM", "Make @or1@Thorny Snail", 31358, 1);
+			drawTooltip(31358, "Thorny Snail (lvl 13):\n1x Pouch, 9x Spirit Shards, 1x Gold Charm");
+
+			addButtons(31360, 4, "Interfaces/Summoning/SUM", "Make @or1@Granite Crab", 31361, 1);
+			drawTooltip(31361, "Granite Crab (lvl 16):\n1x Pouch, 7x Spirit Shards, 1x Gold Charm");
+
+			addButtons(31363, 5, "Interfaces/Summoning/SUM", "Make @or1@Spirit Mosquito", 31364, 1);
+			drawTooltip(31364, "Spirit Mosquito (lvl 17):\n1x Pouch, 1x Spirit Shards, 1x Gold Charm");
+
+			addButtons(31366, 6, "Interfaces/Summoning/SUM", "Make @or1@Desert Wyrm", 31367, 1);
+			drawTooltip(31367, "Desert Wyrm (lvl 18):\n1x Pouch, 45x Spirit Shards, 1x Green Charm");
+
+
+			addButtons(31369, 7, "Interfaces/Summoning/SUM", "Make @or1@Spirit scorpion", 31370, 1);
+			drawTooltip(31370, "Spirit scorpion (lvl 19):\n1x Pouch, 57x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31372, 8, "Interfaces/Summoning/SUM", "Make @or1@Spirit Tz-Kih", 31373, 1);
+			drawTooltip(31373, "Spirit Tz-Kih (lvl 22):\n1x Pouch, 64x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31375, 9, "Interfaces/Summoning/SUM", "Make @or1@Compost Mound", 31376, 1);
+			drawTooltip(31376, "Compost Mound (lvl 28):\n1x Pouch, 47x Spirit Shards, 1x Green Charm");
+
+			addButtons(31378, 10, "Interfaces/Summoning/SUM", "Make @or1@Vampire Bat", 31379, 1);
+			drawTooltip(31379, "Vampire Bat (lvl 31):\n1x Pouch, 84x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31381, 11, "Interfaces/Summoning/SUM", "Make @or1@Honey Badger", 31382, 1);
+			drawTooltip(31382, "Honey Badger (lvl 32):\n1x Pouch, 84x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31384, 12, "Interfaces/Summoning/SUM", "Make @or1@Beaver", 31385, 1);
+			drawTooltip(31385, "Beaver (lvl 33):\n1x Pouch, 72x Spirit Shards, 1x Green Charm");
+
+
+			addButtons(31387, 13, "Interfaces/Summoning/SUM", "Make @or1@Void Shifter", 31388, 1);
+			drawTooltip(31388, "Void Shifter (lvl 34):\n1x Pouch, 74x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31390, 14, "Interfaces/Summoning/SUM", "Make @or1@Void Torcher", 31391, 1);
+			drawTooltip(31391, "Void Torcher (lvl 34):\n1x Pouch, 74x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31393, 15, "Interfaces/Summoning/SUM", "Make @or1@Void Spinner", 31394, 1);
+			drawTooltip(31394, "Void Spinner (lvl 34):\n1x Pouch, 74x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31396, 16, "Interfaces/Summoning/SUM", "Make @or1@Bull Ant", 31397, 1);
+			drawTooltip(31397, "Bull Ant (lvl 40):\n1x Pouch, 11x Spirit Shards, 1x Gold Charm");
+
+			addButtons(31399, 17, "Interfaces/Summoning/SUM", "Make @or1@Void Ravager", 31400, 1);
+			drawTooltip(31400, "Void Ravager (lvl 34):\n1x Pouch, 74x Spirit Shards, 1x Green Charm");
+
+			addButtons(31402, 18, "Interfaces/Summoning/SUM", "Make @or1@Evil Turnip", 31403, 1);
+			drawTooltip(31403, "Evil Turnip (lvl 54):\n1x Pouch, 104x Spirit Shards, 1x Crimson Charm");
+
+
+			addButtons(31405, 19, "Interfaces/Summoning/SUM", "Make @or1@Spirit Cockatrice", 31406, 1);
+			drawTooltip(31406, "Spirit Cockatrice (lvl 43):\n1x Pouch, 88x Spirit Shards, 1x Green Charm");
+
+			addButtons(31408, 20, "Interfaces/Summoning/SUM", "Make @or1@Spirit Guthatrice", 31409, 1);
+			drawTooltip(31409, "Spirit Guthatrice (lvl 43):\n1x Pouch, 88x Spirit Shards, 1x Green Charm");
+
+			addButtons(31411, 21, "Interfaces/Summoning/SUM", "Make @or1@Spirit Saratrice", 31412, 1);
+			drawTooltip(31412, "Spirit Saratrice (lvl 43):\n1x Pouch, 88x Spirit Shards, 1x Green Charm");
+
+			addButtons(31414, 22, "Interfaces/Summoning/SUM", "Make @or1@Spirit Zaratrice", 31415, 1);
+			drawTooltip(31415, "Spirit Zaratrice (lvl 43):\n1x Pouch, 88x Spirit Shards, 1x Green Charm");
+
+			addButtons(31417, 23, "Interfaces/Summoning/SUM", "Make @or1@Spirit Pengatrice", 31418, 1);
+			drawTooltip(31418, "Spirit Pengatrice (lvl 43):\n1x Pouch, 88x Spirit Shards, 1x Green Charm");
+
+			addButtons(31420, 24, "Interfaces/Summoning/SUM", "Make @or1@Spirit Coroxatrice", 31421, 1);
+			drawTooltip(31421, "Spirit Coroxatrice (lvl 43):\n1x Pouch, 88x Spirit Shards, 1x Green Charm");
+
+
+
+			addButtons(31423, 25, "Interfaces/Summoning/SUM", "Make @or1@Spirit Vulatrice", 31424, 1);
+			drawTooltip(31424, "Spirit Vulatrice (lvl 43):\n1x Pouch, 88x Spirit Shards, 1x Green Charm");
+
+			addButtons(31426, 26, "Interfaces/Summoning/SUM", "Make @or1@Bloated Leech", 31427, 1);
+			drawTooltip(31427, "Bloated Leech (lvl 49):\n1x Pouch, 117x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31429, 27, "Interfaces/Summoning/SUM", "Make @or1@Spirit Terrorbird", 31430, 1);
+			drawTooltip(31430, "Spirit Terrorbird (lvl 52):\n1x Pouch, 12x Spirit Shards, 1x Gold Charm");
+
+			addButtons(31432, 28, "Interfaces/Summoning/SUM", "Make @or1@Abyssal Parasite", 31433, 1);
+			drawTooltip(31433, "Abyssal Parasite (lvl 54):\n1x Pouch, 106x Spirit Shards, 1x Green Charm");
+
+			addButtons(31435, 29, "Interfaces/Summoning/SUM", "Make @or1@Spirit Jelly", 31436, 1);
+			drawTooltip(31436, "Spirit Jelly (lvl 55):\n1x Pouch, 151x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31438, 30, "Interfaces/Summoning/SUM", "Make @or1@Ibis", 31439, 1);
+			drawTooltip(31439, "Ibis (lvl 56):\n1x Pouch, 109x Spirit Shards, 1x Green Charm");
 	
+
+			setBounds(29561, 407, 9, 1, Interface);//CLOSE
+			setBounds(29562, 407, 9, 2, Interface);//CLOSE HOVER
+			setBounds(31349, 35, 3, 0, Interface);//BACKOGRUND X Y
+
+			setBounds(31346, 405, 85, 3, Interface);//Arrow
+			setBounds(31347, 405, 85, 4, Interface);//Arrow hover
+
+
+			setBounds(31351, 45, 28, 64, Interface);//Pouch
+			setBounds(31352, 76, 285, 63, Interface);//Requirements
+
+			setBounds(31354, 109, 28, 62, Interface);//Pouch
+			setBounds(31355, 76, 285, 61, Interface);//Requirements
+
+			setBounds(31357, 172, 28, 60, Interface);//Pouch
+			setBounds(31358, 76, 285, 59, Interface);//Requirements
+
+			setBounds(31360, 236, 28, 58, Interface);//Pouch
+			setBounds(31361, 76, 285, 57, Interface);//Requirements
+
+			setBounds(31363, 300, 28, 56, Interface);//Pouch
+			setBounds(31364, 76, 285, 55, Interface);//Requirements
+
+			setBounds(31366, 364, 28, 54, Interface);//Pouch
+			setBounds(31367, 76, 285, 53, Interface);//Requirements
+
+
+			setBounds(31369, 45, 76, 52, Interface);//Pouch
+			setBounds(31370, 76, 285, 51, Interface);//Requirements
+
+			setBounds(31372, 109, 76, 50, Interface);//Pouch
+			setBounds(31373, 76, 285, 49, Interface);//Requirements
+
+			setBounds(31375, 172, 76, 48, Interface);//Pouch
+			setBounds(31376, 76, 285, 47, Interface);//Requirements
+
+			setBounds(31378, 236, 76, 46, Interface);//Pouch
+			setBounds(31379, 76, 285, 45, Interface);//Requirements
+
+			setBounds(31381, 300, 76, 44, Interface);//Pouch
+			setBounds(31382, 76, 285, 43, Interface);//Requirements
+
+			setBounds(31384, 364, 76, 42, Interface);//Pouch
+			setBounds(31385, 76, 285, 41, Interface);//Requirements
+
+
+			setBounds(31387, 45, 124, 40, Interface);//Pouch
+			setBounds(31388, 76, 285, 39, Interface);//Requirements
+
+			setBounds(31390, 109, 124, 38, Interface);//Pouch
+			setBounds(31391, 76, 285, 37, Interface);//Requirements
+
+			setBounds(31393, 172, 124, 36, Interface);//Pouch
+			setBounds(31394, 76, 285, 35, Interface);//Requirements
+
+			setBounds(31396, 236, 124, 34, Interface);//Pouch
+			setBounds(31397, 76, 285, 33, Interface);//Requirements
+
+			setBounds(31399, 300, 124, 32, Interface);//Pouch
+			setBounds(31400, 76, 285, 31, Interface);//Requirements
+
+			setBounds(31402, 364, 124, 30, Interface);//Pouch
+			setBounds(31403, 76, 285, 29, Interface);//Requirements
+
+
+			setBounds(31405, 45, 172, 28, Interface);//Pouch
+			setBounds(31406, 76, 285, 27, Interface);//Requirements
+
+			setBounds(31408, 109, 172, 26, Interface);//Pouch
+			setBounds(31409, 76, 285, 25, Interface);//Requirements
+
+			setBounds(31411, 172, 172, 24, Interface);//Pouch
+			setBounds(31412, 76, 285, 23, Interface);//Requirements
+
+			setBounds(31414, 236, 172, 22, Interface);//Pouch
+			setBounds(31415, 76, 285, 21, Interface);//Requirements
+
+			setBounds(31417, 300, 172, 20, Interface);//Pouch
+			setBounds(31418, 76, 285, 19, Interface);//Requirements
+
+			setBounds(31420, 364, 172, 18, Interface);//Pouch
+			setBounds(31421, 76, 285, 17, Interface);//Requirements
+
+
+			setBounds(31423, 45, 220, 16, Interface);//Pouch
+			setBounds(31424, 76, 285, 15, Interface);//Requirements
+
+			setBounds(31426, 109, 220, 14, Interface);//Pouch
+			setBounds(31427, 76, 285, 13, Interface);//Requirements
+
+			setBounds(31429, 172, 220, 12, Interface);//Pouch
+			setBounds(31430, 76, 285, 11, Interface);//Requirements
+
+			setBounds(31432, 236, 220, 10, Interface);//Pouch
+			setBounds(31433, 76, 285, 9, Interface);//Requirements
+
+			setBounds(31435, 300, 220, 8, Interface);//Pouch
+			setBounds(31436, 76, 285, 7, Interface);//Requirements
+
+			setBounds(31438, 364, 220, 6, Interface);//Pouch
+			setBounds(31439, 76, 285, 5, Interface);//Requirements
+
+
+		Interface = addInterface(31550);
+			setChildren(65, Interface);
+			addHoverButton(29561, "Interfaces/SUMMONING/BUTTON", 0, 16, 16, "Close", 0, 29562, 1);//CLOSE
+        		addHoveredButton(29562, "Interfaces/SUMMONING/BUTTON", 1, 16, 16, 29563);//CLOSE HOVER
+        		addSprite(31549, 0, "Interfaces/Summoning/SUMMONING");//BACKGROUND
+
+			addHoverButton(31546, "Interfaces/Summoning/ARROW", 2, 17, 74, "Previous", 0, 31547, 1);//NEXT PAGE
+        		addHoveredButton(31547, "Interfaces/Summoning/ARROW", 3, 17, 74, 31548);//NEXT PAGE HOVER
+
+
+			addButtons(31551, 31, "Interfaces/Summoning/SUM", "Make @or1@Spirit Graahk", 31552, 1);
+			drawTooltip(31552, "Spirit Graahk (lvl 57):\n1x Pouch, 154x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31554, 32, "Interfaces/Summoning/SUM", "Make @or1@Spirit Kyatt", 31555, 1);
+			drawTooltip(31555, "Spirit Kyatt (lvl 57):\n1x Pouch, 153x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31557, 33, "Interfaces/Summoning/SUM", "Make @or1@Spirit Larupia", 31558, 1);
+			drawTooltip(31558, "Spirit Larupia (lvl 57):\n1x Pouch, 155x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31560, 34, "Interfaces/Summoning/SUM", "Make @or1@Karamthulhu Overlord", 31561, 1);
+			drawTooltip(31561, "Karamthulhu Overlord (lvl 58):\n1x Pouch, 144x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31563, 35, "Interfaces/Summoning/SUM", "Make @or1@Smoke Devil", 31564, 1);
+			drawTooltip(31564, "Smoke Devil (lvl 61):\n1x Pouch, 141x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31566, 36, "Interfaces/Summoning/SUM", "Make @or1@Stranger Plant", 31567, 1);
+			drawTooltip(31567, "Stranger Plant (lvl 64):\n1x Pouch, 128x Spirit Shards, 1x Crimson Charm");
+
+
+			addButtons(31569, 37, "Interfaces/Summoning/SUM", "Make @or1@War Tortoise", 31570, 1);
+			drawTooltip(31570, "War Tortoise (lvl 67):\n1x Pouch, 130x Spirit Shards, 1x Gold Charm");
+
+			addButtons(31572, 38, "Interfaces/Summoning/SUM", "Make @or1@Fruit Bat", 31573, 1);
+			drawTooltip(31573, "Fruit Bat (lvl 69):\n1x Pouch, 130x Spirit Shards, 1x Green Charm");
+
+			addButtons(31575, 39, "Interfaces/Summoning/SUM", "Make @or1@Ravenous Locust", 31576, 1);
+			drawTooltip(31576, "Ravenous Locust (lvl 70):\n1x Pouch, 79x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31578, 40, "Interfaces/Summoning/SUM", "Make @or1@Arctic Bear", 31579, 1);
+			drawTooltip(31579, "Arctic Bear (lvl 71):\n1x Pouch, 14x Spirit Shards, 1x Gold Charm");
+
+			addButtons(31581, 41, "Interfaces/Summoning/SUM", "Make @or1@Obsidian Golem", 31582, 1);
+			drawTooltip(31582, "Obsidian Golem (lvl 73):\n1x Pouch, 195x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31584, 42, "Interfaces/Summoning/SUM", "Make @or1@Praying Mantis", 31585, 1);
+			drawTooltip(31585, "Praying Mantis (lvl 75):\n1x Pouch, 168x Spirit Shards, 1x Crimson Charm");
+
+
+			addButtons(31587, 43, "Interfaces/Summoning/SUM", "Make @or1@Forge Regent", 31588, 1);
+			drawTooltip(31588, "Forge Regent (lvl 76):\n1x Pouch, 141x Spirit Shards, 1x Green Charm");
+
+			addButtons(31590, 44, "Interfaces/Summoning/SUM", "Make @or1@Talon Beast", 31591, 1);
+			drawTooltip(31591, "Talon Beast (lvl 77):\n1x Pouch, 174x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31593, 45, "Interfaces/Summoning/SUM", "Make @or1@Giant Ent", 31594, 1);
+			drawTooltip(31594, "Giant Ent (lvl 78):\n1x Pouch, 124x Spirit Shards, 1x Green Charm");
+
+			addButtons(31596, 46, "Interfaces/Summoning/SUM", "Make @or1@Fire Titan", 31597, 1);
+			drawTooltip(31597, "Fire Titan (lvl 79):\n1x Pouch, 198x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31599, 47, "Interfaces/Summoning/SUM", "Make @or1@Moss Titan", 31600, 1);
+			drawTooltip(31600, "Moss Titan (lvl 79):\n1x Pouch, 202x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31602, 48, "Interfaces/Summoning/SUM", "Make @or1@Hydra", 31603, 1);
+			drawTooltip(31603, "Hydra (lvl 80):\n1x Pouch, 128x Spirit Shards, 1x Green Charm");
+
+
+			addButtons(31605, 49, "Interfaces/Summoning/SUM", "Make @or1@Spirit Dagannoth", 31606, 1);
+			drawTooltip(31606, "Spirit Dagannoth (lvl 83):\n1x Pouch, 1x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31608, 50, "Interfaces/Summoning/SUM", "Make @or1@Lava Titan", 31609, 1);
+			drawTooltip(31609, "Lava Titan (lvl 83):\n1x Pouch, 219x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31611, 51, "Interfaces/Summoning/SUM", "Make @or1@Swamp Titan", 31612, 1);
+			drawTooltip(31612, "Swamp Titan (lvl 85):\n1x Pouch, 150x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31614, 52, "Interfaces/Summoning/SUM", "Make @or1@Rune Minotaur", 31615, 1);
+			drawTooltip(31615, "Rune Minotaur (lvl 86):\n1x Pouch, 1x Spirit Shards, 1x Blue Charm");
+
+			addButtons(31617, 53, "Interfaces/Summoning/SUM", "Make @or1@Unicorn Stallion", 31618, 1);
+			drawTooltip(31618, "Unicorn Stallion (lvl 88):\n1x Pouch, 140x Spirit Shards, 1x Green Charm");
+
+			addButtons(31620, 54, "Interfaces/Summoning/SUM", "Make @or1@Geyser Titan", 31621, 1);
+			drawTooltip(31621, "Geyser Titan (lvl 89):\n1x Pouch, 222x Spirit Shards, 1x Blue Charm");
+
+
+
+			addButtons(31623, 55, "Interfaces/Summoning/SUM", "Make @or1@Wolpertinger", 31624, 1);
+			drawTooltip(31624, "Wolpertinger (lvl 92):\n1x Pouch, 203x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31626, 56, "Interfaces/Summoning/SUM", "Make @or1@Abyssal Titan", 31627, 1);
+			drawTooltip(31627, "Abyssal Titan (lvl 93):\n1x Pouch, 112x Spirit Shards, 1x Green Charm");
+
+			addButtons(31629, 57, "Interfaces/Summoning/SUM", "Make @or1@Iron Titan", 31630, 1);
+			drawTooltip(31630, "Iron Titan (lvl 95):\n1x Pouch, 198x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31632, 58, "Interfaces/Summoning/SUM", "Make @or1@Pack Yak", 31633, 1);
+			drawTooltip(31633, "Pack Yak (lvl 96):\n1x Pouch, 211x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31635, 59, "Interfaces/Summoning/SUM", "Make @or1@Steel Titan", 31636, 1);
+			drawTooltip(31636, "Steel Titan (lvl 99):\n1x Pouch, 178x Spirit Shards, 1x Crimson Charm");
+
+			addButtons(31638, 60, "Interfaces/Summoning/SUM", "Make @or1@Unknown", 31639, 1);
+			drawTooltip(31639, "Unknown (lvl 99):\n1x Pouch, 100x Spirit Shards, 1x Unknown");
+	
+
+			setBounds(29561, 407, 9, 1, Interface);//CLOSE
+			setBounds(29562, 407, 9, 2, Interface);//CLOSE HOVER
+			setBounds(31549, 35, 3, 0, Interface);//BACKOGRUND X Y
+
+			setBounds(31546, 405, 85, 3, Interface);//Arrow
+			setBounds(31547, 405, 85, 4, Interface);//Arrow hover
+
+
+			setBounds(31551, 45, 28, 64, Interface);//Pouch
+			setBounds(31552, 76, 285, 63, Interface);//Requirements
+
+			setBounds(31554, 109, 28, 62, Interface);//Pouch
+			setBounds(31555, 76, 285, 61, Interface);//Requirements
+
+			setBounds(31557, 172, 28, 60, Interface);//Pouch
+			setBounds(31558, 76, 285, 59, Interface);//Requirements
+
+			setBounds(31560, 236, 28, 58, Interface);//Pouch
+			setBounds(31561, 76, 285, 57, Interface);//Requirements
+
+			setBounds(31563, 300, 28, 56, Interface);//Pouch
+			setBounds(31564, 76, 285, 55, Interface);//Requirements
+
+			setBounds(31566, 364, 28, 54, Interface);//Pouch
+			setBounds(31567, 76, 285, 53, Interface);//Requirements
+
+
+			setBounds(31569, 45, 76, 52, Interface);//Pouch
+			setBounds(31570, 76, 285, 51, Interface);//Requirements
+
+			setBounds(31572, 109, 76, 50, Interface);//Pouch
+			setBounds(31573, 76, 285, 49, Interface);//Requirements
+
+			setBounds(31575, 172, 76, 48, Interface);//Pouch
+			setBounds(31576, 76, 285, 47, Interface);//Requirements
+
+			setBounds(31578, 236, 76, 46, Interface);//Pouch
+			setBounds(31579, 76, 285, 45, Interface);//Requirements
+
+			setBounds(31581, 300, 76, 44, Interface);//Pouch
+			setBounds(31582, 76, 285, 43, Interface);//Requirements
+
+			setBounds(31584, 364, 76, 42, Interface);//Pouch
+			setBounds(31585, 76, 285, 41, Interface);//Requirements
+
+
+			setBounds(31587, 45, 124, 40, Interface);//Pouch
+			setBounds(31588, 76, 285, 39, Interface);//Requirements
+
+			setBounds(31590, 109, 124, 38, Interface);//Pouch
+			setBounds(31591, 76, 285, 37, Interface);//Requirements
+
+			setBounds(31593, 172, 124, 36, Interface);//Pouch
+			setBounds(31594, 76, 285, 35, Interface);//Requirements
+
+			setBounds(31596, 236, 124, 34, Interface);//Pouch
+			setBounds(31597, 76, 285, 33, Interface);//Requirements
+
+			setBounds(31599, 300, 124, 32, Interface);//Pouch
+			setBounds(31600, 76, 285, 31, Interface);//Requirements
+
+			setBounds(31602, 364, 124, 30, Interface);//Pouch
+			setBounds(31603, 76, 285, 29, Interface);//Requirements
+
+
+			setBounds(31605, 45, 172, 28, Interface);//Pouch
+			setBounds(31606, 76, 285, 27, Interface);//Requirements
+
+			setBounds(31608, 109, 172, 26, Interface);//Pouch
+			setBounds(31609, 76, 285, 25, Interface);//Requirements
+
+			setBounds(31611, 172, 172, 24, Interface);//Pouch
+			setBounds(31612, 76, 285, 23, Interface);//Requirements
+
+			setBounds(31614, 236, 172, 22, Interface);//Pouch
+			setBounds(31615, 76, 285, 21, Interface);//Requirements
+
+			setBounds(31617, 300, 172, 20, Interface);//Pouch
+			setBounds(31618, 76, 285, 19, Interface);//Requirements
+
+			setBounds(31620, 364, 172, 18, Interface);//Pouch
+			setBounds(31621, 76, 285, 17, Interface);//Requirements
+
+
+			setBounds(31623, 45, 220, 16, Interface);//Pouch
+			setBounds(31624, 76, 285, 15, Interface);//Requirements
+
+			setBounds(31626, 109, 220, 14, Interface);//Pouch
+			setBounds(31627, 76, 285, 13, Interface);//Requirements
+
+			setBounds(31629, 172, 220, 12, Interface);//Pouch
+			setBounds(31630, 76, 285, 11, Interface);//Requirements
+
+			setBounds(31632, 236, 220, 10, Interface);//Pouch
+			setBounds(31633, 76, 285, 9, Interface);//Requirements
+
+			setBounds(31635, 300, 220, 8, Interface);//Pouch
+			setBounds(31636, 76, 285, 7, Interface);//Requirements
+
+			setBounds(31638, 364, 220, 6, Interface);//Pouch
+			setBounds(31639, 76, 285, 5, Interface);//Requirements
+		}
 				public static void audio(RSFont[] tda) {
 		RSInterface tab = addTabInterface(400);
-		addSprite(451, 1, "AUDIO");
+		addSprite(451, 1, "Interfaces/Optiontab/AUDIO");
 		addHoverButton(460, "CLOSE", 3, 50, 50, "Close", -1, 461, 1);
 		addHoveredButton(461, "CLOSE", 4, 20, 20, 17269);
 		//------------------------------------------------------------------------------------//
@@ -378,7 +796,7 @@ newteleport(rsFonts);
 	
 		public static void optionTwo(RSFont[] tda) {
 		RSInterface tab = addTabInterface(904);
-		addSprite(351, 0, "OPTION");
+		addSprite(351, 0, "Interfaces/Optiontab/OPTION");
 		addButton(360, 4, 361, 1, 1, "Interfaces/Optiontab/OPT", 40, 40, "Graphic Settings", 160, 1);
 		drawTooltip(361, "Toggle Mouse Buttons");
 		addButton(364, 4, 365, 2, 2, "Interfaces/Optiontab/OPT", 40, 40, "Audio Settings", 161, 1);
