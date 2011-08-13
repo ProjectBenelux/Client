@@ -428,15 +428,15 @@ public String s300;
 							int xPos = 11;
 							switch(playerRights) {
 								case 1:
-									modIcons[4].drawSprite(xPos, yPos - 12);
+									modIcons[1].drawSprite(xPos, yPos - 12);
 									xPos += 14;
 								break;
 								case 2:
-									modIcons[0].drawSprite(xPos, yPos - 12);
+									modIcons[2].drawSprite(xPos, yPos - 12);
 									xPos += 14;
 								break;
 								case 3:
-									modIcons[1].drawSprite(xPos, yPos - 12);
+									modIcons[2].drawSprite(xPos, yPos - 12);
 									xPos += 14;
 								break;
 								case 4:
