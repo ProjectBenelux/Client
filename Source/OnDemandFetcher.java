@@ -8,6 +8,7 @@ import java.util.zip.CRC32;
 import java.util.zip.GZIPInputStream;
 
 
+
 public final class OnDemandFetcher extends OnDemandFetcherParent
         implements Runnable
 {
@@ -112,8 +113,10 @@ public final class OnDemandFetcher extends OnDemandFetcherParent
 		out.write(data);
 		out.close();
 	}
+
   public void start3(NamedArchive archive, client client1)
     {
+
        byte[] abyte2 = getData(loc+"map_index2.dat");
         ByteBuffer stream2 = new ByteBuffer(abyte2);
      int j1 = abyte2.length / 7;
@@ -332,6 +335,12 @@ mapAmount++;
         }
     }
 
+
+
+
+
+
+
     public void run() {
         try {
             while(running)  {
@@ -339,12 +348,17 @@ mapAmount++;
                 int i = 20;
                 if(anInt1332 == 0 && clientInstance.decompressors[0] != null)
                     i = 50;
+
+
                 try {
                     Thread.sleep(i);
                 } catch(Exception _ex) {
 
 				}
+
                 waiting = true;
+
+
                 for(int j = 0; j < 100; j++) {
                     waiting = false;
                     checkReceived();
@@ -355,59 +369,93 @@ mapAmount++;
                     if(inputStream != null)
                         readData();
                 }
+
                 boolean flag = false;
                 for(OnDemandData onDemandData = (OnDemandData) requested.reverseGetFirst(); onDemandData != null; onDemandData = (OnDemandData) requested.reverseGetNext())
+
+
                     if(onDemandData.incomplete) {
                         flag = true;
                         onDemandData.loopCycle++;
+
+
                         if(onDemandData.loopCycle > 50) {
                             onDemandData.loopCycle = 0;
                             closeRequest(onDemandData);
                         }
                     }
+
+
+
+
+
                 if(!flag) {
                     for(OnDemandData onDemandData_1 = (OnDemandData) requested.reverseGetFirst(); onDemandData_1 != null; onDemandData_1 = (OnDemandData) requested.reverseGetNext()) {
                         flag = true;
                         onDemandData_1.loopCycle++;
+
+
                         if(onDemandData_1.loopCycle > 50) {
                             onDemandData_1.loopCycle = 0;
                             closeRequest(onDemandData_1);
                         }
                     }
+
                 }
+
+
                 if(flag) {
                     loopCycle++;
+
+
+
+
                     if(loopCycle > 750) {
                         try {
                             socket.close();
                         } catch(Exception _ex) {
 						
 						}
+
                         socket = null;
                         inputStream = null;
                         outputStream = null;
                         expectedSize = 0;
                     }
+
+
                 } else {
                     loopCycle = 0;
                     statusString = "";
                 }
+
+
                 if(clientInstance.loggedIn && socket != null && outputStream != null && (anInt1332 > 0 || clientInstance.decompressors[0] == null))  {
                     writeLoopCycle++;
+
+
                     if(writeLoopCycle > 500) {
                         writeLoopCycle = 0;
                         ioBuffer[0] = 0;
                         ioBuffer[1] = 0;
                         ioBuffer[2] = 0;
                         ioBuffer[3] = 10;
+
+
                         try {
                             outputStream.write(ioBuffer, 0, 4);
+
+
+
                         } catch(IOException _ex) {
                             loopCycle = 5000;
                         }
                     }
                 }
             }
+
+
+
         } catch(Exception exception) {
             signlink.reporterror("od_ex " + exception.getMessage());
 			exception.printStackTrace();
@@ -477,8 +525,10 @@ mapAmount++;
 	{
             if(mapIndices1[j1] == i1)
 	    {
+
                 if(i == 0) {
 		 	mapNigga2 = mapIndices2[j1] > 3535 ? -1 : mapIndices2[j1];
+
 				return mapNigga2;
                  } else {
 		 	mapNigga3 = mapIndices3[j1] > 3535 ? -1 : mapIndices3[j1];
@@ -523,6 +573,8 @@ mapAmount++;
             else
                 completedCount++;
 
+
+
         while(uncompletedCount < 10) {
            OnDemandData onDemandData_1 = (OnDemandData)aClass19_1368.popHead();
             if(onDemandData_1 == null)
@@ -536,6 +588,10 @@ mapAmount++;
           waiting = true;
         }
     }
+
+
+
+
 
 
     public void method566() {
